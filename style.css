@@ -1,34 +1,31 @@
-/* =========================
-   CHAT VISUAL SYSTEM
-========================= */
+/* =========================================
+   CHAT DESIGN SYSTEM
+========================================= */
 
 :root {
-
-    /* Concept 3 palette */
-    --sunshine: #FEC92A;
+    --yellow: #FEC92A;
     --cream: #F3E7CA;
-    --carrot: #F96115;
-    --tomato: #D12619;
-    --forest: #17522A;
+    --orange: #F96115;
+    --red: #D12619;
+    --green: #17522A;
     --kiwi: #9ABE03;
 
-    /* Supporting colors */
-    --soft-white: #FFFDF7;
+    --white: #FFFDF7;
     --text: #241F1B;
     --muted: #655D55;
-    --line: #D9CDBB;
+    --line: #D8CDBB;
 
     --max-width: 1200px;
 
-    --radius-small: 12px;
+    --radius-small: 14px;
     --radius-medium: 22px;
-    --radius-large: 36px;
+    --radius-large: 34px;
 }
 
 
-/* =========================
+/* =========================================
    RESET
-========================= */
+========================================= */
 
 * {
     box-sizing: border-box;
@@ -44,10 +41,8 @@ body {
     background: var(--cream);
     color: var(--text);
 
-    font-family:
-        "Lexend Deca",
-        Arial,
-        sans-serif;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
 
     line-height: 1.5;
 }
@@ -61,34 +56,35 @@ a {
 }
 
 button,
-a {
-    -webkit-tap-highlight-color: transparent;
+input,
+textarea {
+    font-family: "Lexend Deca", sans-serif;
 }
 
-
-/* Accessibility focus */
-
 a:focus-visible,
-button:focus-visible {
-    outline: 4px solid var(--tomato);
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 4px solid var(--red);
     outline-offset: 4px;
 }
 
 
-/* =========================
+/* =========================================
    HEADER
-========================= */
+========================================= */
 
 .site-header {
-    min-height: 90px;
+    min-height: 88px;
 
     display: flex;
     align-items: center;
-    gap: 45px;
 
-    padding: 20px max(5vw, 30px);
+    gap: 36px;
 
-    background: var(--soft-white);
+    padding: 18px max(5vw, 28px);
+
+    background: var(--white);
 
     border-bottom: 2px solid var(--text);
 
@@ -98,51 +94,58 @@ button:focus-visible {
 }
 
 .logo {
-    font-family:
-        "Fredoka",
-        Arial,
-        sans-serif;
+    margin-right: auto;
 
+    font-family: "Nunito", sans-serif;
+    font-size: 2.1rem;
     font-weight: 700;
-    font-size: 2rem;
+
+    color: var(--red);
 
     text-decoration: none;
-
-    margin-right: auto;
 }
 
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 32px;
+
+    gap: 28px;
 }
 
 .main-nav a {
-    font-weight: 600;
-    text-decoration: none;
-
     padding: 10px 4px;
+
+    font-size: 0.98rem;
+    font-weight: 500;
+
+    text-decoration: none;
 }
 
 .main-nav a:hover {
     text-decoration: underline;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 2px;
     text-underline-offset: 6px;
 }
 
 .nav-order-button {
-    padding: 13px 22px;
+    min-height: 48px;
 
+    display: inline-flex;
+    align-items: center;
+
+    padding: 11px 22px;
+
+    background: var(--yellow);
+
+    border: 2px solid var(--text);
     border-radius: 100px;
 
-    background: var(--sunshine);
-    border: 2px solid var(--text);
+    box-shadow: 4px 4px 0 var(--text);
 
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: 600;
 
     text-decoration: none;
-
-    box-shadow: 4px 4px 0 var(--text);
 
     transition:
         transform 0.15s ease,
@@ -151,18 +154,73 @@ button:focus-visible {
 
 .nav-order-button:hover {
     transform: translate(-2px, -2px);
+
     box-shadow: 6px 6px 0 var(--text);
 }
 
 
-/* =========================
+/* =========================================
+   BUTTONS
+========================================= */
+
+.button {
+    min-height: 54px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 25px;
+
+    border: 2px solid var(--text);
+    border-radius: 100px;
+
+    box-shadow: 4px 4px 0 var(--text);
+
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.button:hover {
+    transform: translate(-2px, -2px);
+
+    box-shadow: 6px 6px 0 var(--text);
+}
+
+.button:active {
+    transform: translate(2px, 2px);
+
+    box-shadow: 1px 1px 0 var(--text);
+}
+
+.button-yellow {
+    background: var(--yellow);
+    color: var(--text);
+}
+
+.button-dark {
+    background: var(--text);
+    color: white;
+}
+
+
+/* =========================================
    HERO
-========================= */
+========================================= */
 
 .hero {
     max-width: var(--max-width);
 
-    margin: 70px auto;
+    margin: 65px auto 100px;
 
     padding: 0 30px;
 
@@ -173,7 +231,14 @@ button:focus-visible {
 }
 
 .hero-image {
-    background: var(--soft-white);
+    min-height: 520px;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+
+    background: var(--yellow);
 
     border: 2px solid var(--text);
 
@@ -182,41 +247,39 @@ button:focus-visible {
         0
         0
         var(--radius-large);
-
-    overflow: hidden;
 }
 
 .image-placeholder {
-    width: 100%;
-    height: 100%;
-    min-height: 520px;
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+
+    min-height: 430px;
 
     display: grid;
     place-items: center;
 
-    background:
-        repeating-linear-gradient(
-            -45deg,
-            #eeeeee,
-            #eeeeee 20px,
-            #dddddd 20px,
-            #dddddd 40px
-        );
+    padding: 25px;
 
-    color: var(--muted);
+    background: var(--white);
 
-    font-weight: 700;
-    font-size: 1.5rem;
+    border: 2px solid var(--text);
+    border-radius: var(--radius-medium);
+
+    font-family: "Nunito", sans-serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+
+    text-align: center;
 }
 
 .hero-content {
-    padding: 65px;
+    padding: 60px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    background: var(--soft-white);
+    background: var(--white);
 
     border-top: 2px solid var(--text);
     border-right: 2px solid var(--text);
@@ -230,109 +293,62 @@ button:focus-visible {
 }
 
 .eyebrow {
-    margin: 0 0 10px;
+    margin: 0 0 12px;
 
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    font-size: 0.76rem;
+    font-weight: 600;
+
+    letter-spacing: 0.07em;
 }
 
 .hero h1 {
     margin: 0;
 
-    font-family:
-        "Fredoka",
-        Arial,
-        sans-serif;
+    font-family: "Nunito", sans-serif;
 
-    font-size: clamp(4rem, 8vw, 7rem);
+    font-size: clamp(4rem, 7vw, 6rem);
+    font-weight: 700;
+
     line-height: 0.95;
 
-    color: var(--tomato);
+    color: var(--red);
 }
 
 .hero h2 {
-    margin: 25px 0 10px;
+    margin: 24px 0 10px;
 
-    font-family:
-        "Fredoka",
-        Arial,
-        sans-serif;
+    font-family: "Nunito", sans-serif;
 
-    font-size: 1.8rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+
+    line-height: 1.2;
 }
 
 .hero-description {
-    max-width: 470px;
+    max-width: 460px;
 
-    margin-bottom: 28px;
+    margin: 0 0 28px;
 
-    font-size: 1.05rem;
+    font-size: 1rem;
 }
 
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
+
     gap: 16px;
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
-
-.button {
-    min-height: 52px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 14px 24px;
-
-    border: 2px solid var(--text);
-    border-radius: 100px;
-
-    font-weight: 700;
-
-    text-decoration: none;
-
-    box-shadow: 4px 4px 0 var(--text);
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-}
-
-.button:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 var(--text);
-}
-
-.button:active {
-    transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0 var(--text);
-}
-
-.button-yellow {
-    background: var(--sunshine);
-}
-
-.button-dark {
-    background: var(--text);
-    color: white;
-}
-
-
-/* =========================
-   GENERAL SECTION
-========================= */
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
 
 .menu-section,
 .popular-section,
 .info-grid,
 .help-section {
-
     max-width: var(--max-width);
 
     margin: 100px auto;
@@ -341,86 +357,77 @@ button:focus-visible {
     padding-right: 30px;
 }
 
-.section-heading {
-    display: flex;
-    gap: 22px;
-    align-items: flex-start;
+.section-number {
+    width: fit-content;
 
-    margin-bottom: 35px;
+    margin: 0 0 10px;
+
+    padding: 6px 10px;
+
+    background: var(--white);
+
+    border: 2px solid var(--text);
+    border-radius: 100px;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.section-heading {
+    margin-bottom: 32px;
 }
 
 .section-heading h2,
 .section-heading-row h2,
 .info-grid h2,
 .help-section h2 {
-
     margin: 0;
 
-    font-family:
-        "Fredoka",
-        Arial,
-        sans-serif;
+    font-family: "Nunito", sans-serif;
 
-    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-size: clamp(2.2rem, 4vw, 3.3rem);
+    font-weight: 600;
+
+    line-height: 1.08;
 }
 
 .section-heading p {
-    margin-top: 6px;
-}
-
-.section-number {
-    display: inline-block;
-
-    margin: 0 0 10px;
-
-    font-weight: 800;
-    font-size: 0.85rem;
-
-    border: 2px solid var(--text);
-
-    padding: 6px 10px;
-
-    border-radius: 100px;
-
-    background: var(--soft-white);
+    margin: 8px 0 0;
 }
 
 
-/* =========================
+/* =========================================
    CATEGORY BUTTONS
-========================= */
+========================================= */
 
 .category-buttons {
     display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 16px;
 
-    margin-bottom: 25px;
+    margin-bottom: 26px;
 }
 
 .category-button {
-    min-height: 80px;
+    min-height: 82px;
+
+    padding: 14px;
 
     border: 2px solid var(--text);
-
     border-radius: var(--radius-medium);
 
-    font-family:
-        "Fredoka",
-        Arial,
-        sans-serif;
+    box-shadow: 4px 4px 0 var(--text);
 
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1.2rem;
+    font-weight: 600;
 
     color: var(--text);
 
     cursor: pointer;
-
-    box-shadow: 4px 4px 0 var(--text);
 
     transition:
         transform 0.15s ease,
@@ -432,21 +439,21 @@ button:focus-visible {
 }
 
 .category-button.active {
-    box-shadow: 7px 7px 0 var(--text);
-
     transform: translateY(-3px);
+
+    box-shadow: 7px 7px 0 var(--text);
 }
 
 .breakfast {
-    background: var(--sunshine);
+    background: var(--yellow);
 }
 
 .coffee {
-    background: var(--carrot);
+    background: var(--orange);
 }
 
 .tea {
-    background: var(--forest);
+    background: var(--green);
     color: white;
 }
 
@@ -455,22 +462,22 @@ button:focus-visible {
 }
 
 
-/* =========================
+/* =========================================
    EXPANDED CATEGORY
-========================= */
+========================================= */
 
 .category-display {
-    padding: 35px;
+    padding: 34px;
 
-    background: var(--soft-white);
+    background: var(--white);
 
     border: 2px solid var(--text);
-
     border-radius: var(--radius-large);
 }
 
 .category-title-row {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
@@ -482,20 +489,21 @@ button:focus-visible {
 .category-title-row h3 {
     margin: 0;
 
-    font-family:
-        "Fredoka",
-        Arial,
-        sans-serif;
+    font-family: "Nunito", sans-serif;
 
-    font-size: 2rem;
+    font-size: 1.9rem;
+    font-weight: 600;
 }
 
-.category-title-row a {
-    font-weight: 700;
+.category-title-row p {
+    margin: 4px 0 0;
+
+    color: var(--muted);
 }
 
 .category-items {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
 
     gap: 22px;
@@ -504,79 +512,91 @@ button:focus-visible {
 .mini-item {
     padding: 16px;
 
-    border: 2px solid var(--line);
+    background: var(--cream);
 
+    border: 2px solid var(--text);
     border-radius: var(--radius-medium);
 }
 
 .mini-image {
     height: 170px;
 
-    background: #e6e6e6;
+    display: grid;
+    place-items: center;
 
+    margin-bottom: 14px;
+
+    background: var(--white);
+
+    border: 2px solid var(--text);
     border-radius: var(--radius-small);
 
-    margin-bottom: 15px;
+    color: var(--muted);
 }
 
 .mini-item h4 {
     margin: 0;
 
-    font-size: 1.1rem;
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1.15rem;
+    font-weight: 600;
 }
 
 .mini-item p {
     margin: 5px 0 0;
 
-    font-weight: 700;
+    font-weight: 600;
 }
 
 
-/* =========================
-   POPULAR
-========================= */
+/* =========================================
+   POPULAR AT CHAT
+========================================= */
 
 .section-heading-row {
     display: flex;
+
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
+
+    gap: 25px;
 
     margin-bottom: 30px;
 }
 
 .section-heading-row a {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .popular-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 25px;
 }
 
 .poster-card {
-    padding: 24px;
+    padding: 23px;
 
     border: 2px solid var(--text);
-
     border-radius: var(--radius-large);
 
     box-shadow: 7px 7px 0 var(--text);
 }
 
 .poster-yellow {
-    background: var(--sunshine);
+    background: var(--yellow);
 }
 
 .poster-orange {
-    background: var(--carrot);
+    background: var(--orange);
 }
 
 .poster-green {
-    background: var(--forest);
+    background: var(--green);
+
     color: white;
 }
 
@@ -587,25 +607,25 @@ button:focus-visible {
 
     padding: 6px 10px;
 
-    background: var(--soft-white);
+    background: var(--white);
     color: var(--text);
 
     border: 2px solid var(--text);
     border-radius: 100px;
 
-    font-size: 0.75rem;
-    font-weight: 800;
+    font-size: 0.7rem;
+    font-weight: 600;
 }
 
 .poster-image {
-    height: 280px;
+    height: 260px;
 
     display: grid;
     place-items: center;
 
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 
-    background: var(--soft-white);
+    background: var(--white);
     color: var(--muted);
 
     border: 2px solid var(--text);
@@ -615,12 +635,10 @@ button:focus-visible {
 .poster-card h3 {
     margin: 0;
 
-    font-family:
-        "Fredoka",
-        Arial,
-        sans-serif;
+    font-family: "Nunito", sans-serif;
 
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
 .poster-card p {
@@ -629,79 +647,118 @@ button:focus-visible {
 
 .poster-bottom {
     display: flex;
+
     justify-content: space-between;
+    align-items: center;
 
     gap: 20px;
 
-    font-weight: 700;
+    font-weight: 600;
+}
+
+.poster-bottom a {
+    padding: 8px 13px;
+
+    background: var(--white);
+    color: var(--text);
+
+    border: 2px solid var(--text);
+    border-radius: 100px;
+
+    font-weight: 600;
+
+    text-decoration: none;
 }
 
 
-/* =========================
-   SPECIAL + HOURS
-========================= */
+/* =========================================
+   TODAY'S SPECIAL + HOURS
+========================================= */
 
 .info-grid {
     display: grid;
 
-    grid-template-columns:
-        1.6fr 1fr;
+    grid-template-columns: 1.55fr 1fr;
 
     gap: 24px;
 }
 
 .special-card,
 .hours-card {
-    padding: 40px;
+    padding: 38px;
 
     border: 2px solid var(--text);
-
     border-radius: var(--radius-large);
 }
 
 .special-card {
-    background: var(--tomato);
+    background: var(--red);
 
     color: white;
 }
 
 .special-label {
-    font-weight: 800;
+    margin: 0 0 8px;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
     letter-spacing: 0.06em;
 }
 
 .special-image {
-    min-height: 250px;
+    min-height: 240px;
 
     display: grid;
     place-items: center;
 
     margin: 25px 0;
 
-    background: var(--soft-white);
+    background: var(--white);
     color: var(--muted);
 
     border: 2px solid var(--text);
     border-radius: var(--radius-medium);
 }
 
+.special-description {
+    margin-bottom: 22px;
+}
+
 .hours-card {
-    background: var(--soft-white);
+    background: var(--white);
 }
 
-.hours-list {
-    margin-top: 30px;
-}
+.open-day {
+    margin-top: 28px;
 
-.hours-list div {
+    padding: 25px;
+
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 
-    gap: 20px;
+    gap: 8px;
 
-    padding: 15px 0;
+    background: var(--yellow);
 
-    border-bottom: 1px solid var(--line);
+    border: 2px solid var(--text);
+    border-radius: var(--radius-medium);
+
+    box-shadow: 5px 5px 0 var(--text);
+}
+
+.day-label {
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1.65rem;
+    font-weight: 600;
+}
+
+.hours-time {
+    font-family: "Lexend Deca", sans-serif;
+
+    font-size: 1.15rem;
+    font-weight: 600;
 }
 
 .hours-note {
@@ -711,44 +768,119 @@ button:focus-visible {
 }
 
 
-/* =========================
-   HELP
-========================= */
+/* =========================================
+   HELP SECTION
+========================================= */
 
 .help-section {
-    display: flex;
+    display: grid;
 
-    justify-content: space-between;
-    align-items: center;
+    grid-template-columns: 0.85fr 1.15fr;
 
     gap: 50px;
 
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 45px;
+    padding-bottom: 45px;
 
     background: var(--kiwi);
 
     border: 2px solid var(--text);
-
     border-radius: var(--radius-large);
 }
 
+.help-copy p {
+    max-width: 470px;
+}
 
-/* =========================
+.help-form {
+    padding: 24px;
+
+    background: var(--white);
+
+    border: 2px solid var(--text);
+    border-radius: var(--radius-medium);
+}
+
+.help-form label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-weight: 600;
+}
+
+.help-form textarea {
+    width: 100%;
+    min-height: 130px;
+
+    display: block;
+
+    padding: 16px;
+
+    background: white;
+    color: var(--text);
+
+    border: 2px solid var(--text);
+    border-radius: var(--radius-small);
+
+    font-size: 1rem;
+
+    resize: vertical;
+}
+
+.help-form button {
+    min-height: 48px;
+
+    margin-top: 14px;
+
+    padding: 12px 22px;
+
+    background: var(--yellow);
+    color: var(--text);
+
+    border: 2px solid var(--text);
+    border-radius: 100px;
+
+    box-shadow: 4px 4px 0 var(--text);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.help-form button:hover {
+    transform: translate(-2px, -2px);
+
+    box-shadow: 6px 6px 0 var(--text);
+}
+
+.help-message {
+    min-height: 24px;
+
+    margin: 15px 0 0;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 footer {
     margin-top: 100px;
 
-    padding: 70px max(5vw, 30px);
+    padding: 65px max(5vw, 30px);
 
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 
-    gap: 40px;
+    gap: 50px;
 
-    background: var(--forest);
+    background: var(--green);
 
     color: white;
 }
@@ -756,37 +888,91 @@ footer {
 footer h2 {
     margin: 0;
 
-    font-family:
-        "Fredoka",
-        Arial,
-        sans-serif;
+    font-family: "Nunito", sans-serif;
 
-    font-size: 3.5rem;
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 footer p {
     margin: 6px 0;
 }
 
-.footer-right {
-    text-align: right;
+.footer-main {
+    max-width: 500px;
 }
 
 .rmds-credit {
     opacity: 0.8;
+
+    font-size: 0.9rem;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 16px;
+
+    text-align: right;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================
+   LEILA / MIROO CREDIT
+========================================= */
 
-@media (max-width: 850px) {
+.creator-credit {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.creator-text {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 0.8rem;
+    line-height: 1.25;
+}
+
+.creator-text span {
+    opacity: 0.75;
+}
+
+.creator-text strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.creator-logo {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
 
     .site-header {
         flex-wrap: wrap;
-
-        gap: 15px;
     }
 
     .main-nav {
@@ -795,19 +981,10 @@ footer p {
         width: 100%;
 
         justify-content: space-between;
-
-        gap: 10px;
     }
-
-    .nav-order-button {
-        margin-left: auto;
-    }
-
 
     .hero {
         grid-template-columns: 1fr;
-
-        margin-top: 35px;
     }
 
     .hero-image {
@@ -819,7 +996,7 @@ footer p {
     }
 
     .hero-content {
-        padding: 40px 30px;
+        padding: 42px 32px;
 
         border-left: 2px solid var(--text);
         border-top: 0;
@@ -831,10 +1008,8 @@ footer p {
             var(--radius-large);
     }
 
-
     .category-buttons {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .category-items {
@@ -850,28 +1025,34 @@ footer p {
     }
 
     .help-section {
-        flex-direction: column;
-
-        align-items: flex-start;
+        grid-template-columns: 1fr;
     }
 
     footer {
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .footer-right {
+        align-items: flex-start;
+
         text-align: left;
     }
 }
 
 
-@media (max-width: 520px) {
+/* =========================================
+   RESPONSIVE — PHONE
+========================================= */
+
+@media (max-width: 560px) {
 
     .main-nav {
         display: grid;
 
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px 20px;
     }
 
     .category-buttons {
@@ -890,5 +1071,15 @@ footer p {
         flex-direction: column;
 
         align-items: flex-start;
+    }
+
+    .section-heading-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .creator-credit {
+        align-items: center;
     }
 }
