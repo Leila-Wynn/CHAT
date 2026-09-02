@@ -1,44 +1,1956 @@
-<!-- REPLACE YOUR CURRENT FOOTER WITH THIS -->
+<!DOCTYPE html>
+<html lang="en">
 
-<footer>
+<head>
+    <meta charset="UTF-8">
 
-    <div class="footer-main">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-        <h2>CHAT</h2>
+    <title>CHAT Coffee Shop</title>
 
-        <p>
-            Student-run coffee shop at RMDS.
-        </p>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <p class="rmds-credit">
-            Part of Rocky Mountain Deaf School
-        </p>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600&family=Nunito:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-    </div>
+    <style>
+
+        /* =========================================
+           CHAT COLORS
+        ========================================== */
+
+        :root {
+            --yellow: #FEC92A;
+            --cream: #F3E7CA;
+            --orange: #F96115;
+            --red: #D12619;
+            --green: #17522A;
+            --kiwi: #9ABE03;
+
+            --white: #FFFDF7;
+            --text: #241F1B;
+            --muted: #655D55;
+            --line: #D8CDBB;
+
+            --max-width: 1200px;
+
+            --radius-small: 14px;
+            --radius-medium: 22px;
+            --radius-large: 34px;
+        }
 
 
-    <div class="footer-right">
+        /* =========================================
+           RESET
+        ========================================== */
 
-        <p>
-            Made for our school community.
-        </p>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            background: var(--cream);
+            color: var(--text);
+
+            font-family: "Lexend Deca", sans-serif;
+            font-weight: 400;
+
+            line-height: 1.5;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        textarea {
+            font-family: "Lexend Deca", sans-serif;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        textarea:focus-visible {
+            outline: 4px solid var(--red);
+            outline-offset: 4px;
+        }
 
 
-        <div class="creator-credit">
+        /* =========================================
+           HEADER
+        ========================================== */
 
-            <div class="creator-text">
-                <span>Designed &amp; developed by</span>
-                <strong>Leila</strong>
+        .site-header {
+            min-height: 88px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 36px;
+
+            padding: 18px max(5vw, 28px);
+
+            background: var(--white);
+
+            border-bottom: 2px solid var(--text);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+        }
+
+        .logo {
+            margin-right: auto;
+
+            font-family: "Nunito", sans-serif;
+            font-size: 2.1rem;
+            font-weight: 700;
+
+            color: var(--red);
+
+            text-decoration: none;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+
+            gap: 28px;
+        }
+
+        .main-nav a {
+            padding: 10px 4px;
+
+            font-size: 0.98rem;
+            font-weight: 500;
+
+            text-decoration: none;
+        }
+
+        .main-nav a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 6px;
+        }
+
+        .nav-order-button {
+            min-height: 48px;
+
+            display: inline-flex;
+            align-items: center;
+
+            padding: 11px 22px;
+
+            background: var(--yellow);
+
+            border: 2px solid var(--text);
+            border-radius: 100px;
+
+            box-shadow: 4px 4px 0 var(--text);
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+            transition:
+                transform 0.15s ease,
+                box-shadow 0.15s ease;
+        }
+
+        .nav-order-button:hover {
+            transform: translate(-2px, -2px);
+
+            box-shadow: 6px 6px 0 var(--text);
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================== */
+
+        .button {
+            min-height: 54px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 25px;
+
+            border: 2px solid var(--text);
+            border-radius: 100px;
+
+            box-shadow: 4px 4px 0 var(--text);
+
+            font-size: 0.98rem;
+            font-weight: 600;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.15s ease,
+                box-shadow 0.15s ease;
+        }
+
+        .button:hover {
+            transform: translate(-2px, -2px);
+
+            box-shadow: 6px 6px 0 var(--text);
+        }
+
+        .button:active {
+            transform: translate(2px, 2px);
+
+            box-shadow: 1px 1px 0 var(--text);
+        }
+
+        .button-yellow {
+            background: var(--yellow);
+            color: var(--text);
+        }
+
+        .button-dark {
+            background: var(--text);
+            color: white;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================== */
+
+        .hero {
+            max-width: var(--max-width);
+
+            margin: 65px auto 100px;
+
+            padding: 0 30px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            min-height: 520px;
+        }
+
+        .hero-image {
+            min-height: 520px;
+
+            display: grid;
+            place-items: center;
+
+            overflow: hidden;
+
+            background: var(--yellow);
+
+            border: 2px solid var(--text);
+
+            border-radius:
+                var(--radius-large)
+                0
+                0
+                var(--radius-large);
+        }
+
+        .image-placeholder {
+            width: calc(100% - 60px);
+            min-height: 430px;
+
+            display: grid;
+            place-items: center;
+
+            padding: 30px;
+
+            background: var(--white);
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-medium);
+
+            font-family: "Nunito", sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+
+            text-align: center;
+        }
+
+        .hero-content {
+            padding: 60px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            background: var(--white);
+
+            border-top: 2px solid var(--text);
+            border-right: 2px solid var(--text);
+            border-bottom: 2px solid var(--text);
+
+            border-radius:
+                0
+                var(--radius-large)
+                var(--radius-large)
+                0;
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+
+            font-size: 0.76rem;
+            font-weight: 600;
+
+            letter-spacing: 0.07em;
+        }
+
+        .hero h1 {
+            margin: 0;
+
+            font-family: "Nunito", sans-serif;
+
+            font-size: clamp(4rem, 7vw, 6rem);
+            font-weight: 700;
+
+            line-height: 0.95;
+
+            color: var(--red);
+        }
+
+        .hero h2 {
+            margin: 24px 0 10px;
+
+            font-family: "Nunito", sans-serif;
+
+            font-size: 1.7rem;
+            font-weight: 600;
+
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            max-width: 460px;
+
+            margin: 0 0 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 16px;
+        }
+
+
+        /* =========================================
+           GENERAL SECTIONS
+        ========================================== */
+
+        .menu-section,
+        .popular-section,
+        .info-grid,
+        .help-section {
+            max-width: var(--max-width);
+
+            margin: 100px auto;
+
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .section-number {
+            width: fit-content;
+
+            margin: 0 0 10px;
+
+            padding: 6px 10px;
+
+            background: var(--white);
+
+            border: 2px solid var(--text);
+            border-radius: 100px;
+
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .section-heading {
+            margin-bottom: 32px;
+        }
+
+        .section-heading h2,
+        .section-heading-row h2,
+        .info-grid h2,
+        .help-section h2 {
+            margin: 0;
+
+            font-family: "Nunito", sans-serif;
+
+            font-size: clamp(2.2rem, 4vw, 3.3rem);
+            font-weight: 600;
+
+            line-height: 1.08;
+        }
+
+        .section-heading p {
+            margin: 8px 0 0;
+        }
+
+
+        /* =========================================
+           CATEGORY BUTTONS
+        ========================================== */
+
+        .category-buttons {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 16px;
+
+            margin-bottom: 26px;
+        }
+
+        .category-button {
+            min-height: 82px;
+
+            padding: 14px;
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-medium);
+
+            box-shadow: 4px 4px 0 var(--text);
+
+            font-family: "Nunito", sans-serif;
+
+            font-size: 1.2rem;
+            font-weight: 600;
+
+            color: var(--text);
+
+            cursor: pointer;
+
+            transition:
+                transform 0.15s ease,
+                box-shadow 0.15s ease;
+        }
+
+        .category-button:hover {
+            transform: translateY(-4px);
+        }
+
+        .category-button.active {
+            transform: translateY(-3px);
+
+            box-shadow: 7px 7px 0 var(--text);
+        }
+
+        .breakfast {
+            background: var(--yellow);
+        }
+
+        .coffee {
+            background: var(--orange);
+        }
+
+        .tea {
+            background: var(--green);
+            color: white;
+        }
+
+        .fruit {
+            background: var(--kiwi);
+        }
+
+
+        /* =========================================
+           CATEGORY DISPLAY
+        ========================================== */
+
+        .category-display {
+            padding: 34px;
+
+            background: var(--white);
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-large);
+        }
+
+        .category-title-row {
+            margin-bottom: 25px;
+        }
+
+        .category-title-row h3 {
+            margin: 0;
+
+            font-family: "Nunito", sans-serif;
+
+            font-size: 1.9rem;
+            font-weight: 600;
+        }
+
+        .category-title-row p {
+            margin: 4px 0 0;
+
+            color: var(--muted);
+        }
+
+        .category-items {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .mini-item {
+            padding: 16px;
+
+            background: var(--cream);
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-medium);
+        }
+
+        .mini-image {
+            height: 170px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 14px;
+
+            background: var(--white);
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-small);
+
+            color: var(--muted);
+        }
+
+        .mini-item h4 {
+            margin: 0;
+
+            font-family: "Nunito", sans-serif;
+
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .mini-item p {
+            margin: 5px 0 0;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           POPULAR
+        ========================================== */
+
+        .section-heading-row {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: flex-end;
+
+            gap: 25px;
+
+            margin-bottom: 30px;
+        }
+
+        .section-heading-row a {
+            font-weight: 600;
+        }
+
+        .popular-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .poster-card {
+            padding: 23px;
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-large);
+
+            box-shadow: 7px 7px 0 var(--text);
+        }
+
+        .poster-yellow {
+            background: var(--yellow);
+        }
+
+        .poster-orange {
+            background: var(--orange);
+        }
+
+        .poster-green {
+            background: var(--green);
+            color: white;
+        }
+
+        .poster-label {
+            display: inline-block;
+
+            margin-bottom: 16px;
+
+            padding: 6px 10px;
+
+            background: var(--white);
+            color: var(--text);
+
+            border: 2px solid var(--text);
+            border-radius: 100px;
+
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .poster-image {
+            height: 260px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 20px;
+
+            background: var(--white);
+            color: var(--muted);
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-medium);
+        }
+
+        .poster-card h3 {
+            margin: 0;
+
+            font-family: "Nunito", sans-serif;
+
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .poster-card p {
+            margin: 7px 0 18px;
+        }
+
+        .poster-bottom {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+
+            font-weight: 600;
+        }
+
+        .poster-bottom a {
+            padding: 8px 13px;
+
+            background: var(--white);
+            color: var(--text);
+
+            border: 2px solid var(--text);
+            border-radius: 100px;
+
+            text-decoration: none;
+        }
+
+
+        /* =========================================
+           SPECIAL + HOURS
+        ========================================== */
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns: 1.55fr 1fr;
+
+            gap: 24px;
+        }
+
+        .special-card,
+        .hours-card {
+            padding: 38px;
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-large);
+        }
+
+        .special-card {
+            background: var(--red);
+            color: white;
+        }
+
+        .special-label {
+            margin: 0 0 8px;
+
+            font-size: 0.82rem;
+            font-weight: 600;
+
+            letter-spacing: 0.06em;
+        }
+
+        .special-image {
+            min-height: 240px;
+
+            display: grid;
+            place-items: center;
+
+            margin: 25px 0;
+
+            background: var(--white);
+            color: var(--muted);
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-medium);
+        }
+
+        .special-description {
+            margin-bottom: 22px;
+        }
+
+        .hours-card {
+            background: var(--white);
+        }
+
+        .open-day {
+            margin-top: 28px;
+
+            padding: 25px;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 8px;
+
+            background: var(--yellow);
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-medium);
+
+            box-shadow: 5px 5px 0 var(--text);
+        }
+
+        .day-label {
+            font-family: "Nunito", sans-serif;
+
+            font-size: 1.65rem;
+            font-weight: 600;
+        }
+
+        .hours-time {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .hours-note {
+            margin-top: 25px;
+
+            color: var(--muted);
+        }
+
+
+        /* =========================================
+           HELP
+        ========================================== */
+
+        .help-section {
+            display: grid;
+
+            grid-template-columns: 0.85fr 1.15fr;
+
+            gap: 50px;
+
+            padding-top: 45px;
+            padding-bottom: 45px;
+
+            background: var(--kiwi);
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-large);
+        }
+
+        .help-copy p {
+            max-width: 470px;
+        }
+
+        .help-form {
+            padding: 24px;
+
+            background: var(--white);
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-medium);
+        }
+
+        .help-form label {
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-weight: 600;
+        }
+
+        .help-form textarea {
+            width: 100%;
+            min-height: 130px;
+
+            display: block;
+
+            padding: 16px;
+
+            background: white;
+            color: var(--text);
+
+            border: 2px solid var(--text);
+            border-radius: var(--radius-small);
+
+            font-size: 1rem;
+
+            resize: vertical;
+        }
+
+        .help-form button {
+            min-height: 48px;
+
+            margin-top: 14px;
+
+            padding: 12px 22px;
+
+            background: var(--yellow);
+            color: var(--text);
+
+            border: 2px solid var(--text);
+            border-radius: 100px;
+
+            box-shadow: 4px 4px 0 var(--text);
+
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+        .help-message {
+            min-height: 24px;
+
+            margin: 15px 0 0;
+
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================== */
+
+        footer {
+            margin-top: 100px;
+
+            padding: 65px max(5vw, 30px);
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: flex-end;
+
+            gap: 50px;
+
+            background: var(--green);
+            color: white;
+        }
+
+        footer h2 {
+            margin: 0;
+
+            font-family: "Nunito", sans-serif;
+
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        footer p {
+            margin: 6px 0;
+        }
+
+        .footer-main {
+            max-width: 500px;
+        }
+
+        .rmds-credit {
+            opacity: 0.8;
+
+            font-size: 0.9rem;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            gap: 16px;
+
+            text-align: right;
+        }
+
+
+        /* =========================================
+           LEILA / MIROO CREDIT
+        ========================================== */
+
+        .creator-credit {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            padding-top: 14px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .creator-text {
+            display: flex;
+            flex-direction: column;
+
+            font-size: 0.8rem;
+            line-height: 1.25;
+        }
+
+        .creator-text span {
+            opacity: 0.75;
+        }
+
+        .creator-text strong {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .creator-logo {
+            width: 48px;
+            height: 48px;
+
+            flex-shrink: 0;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================== */
+
+        @media (max-width: 900px) {
+
+            .site-header {
+                flex-wrap: wrap;
+            }
+
+            .main-nav {
+                order: 3;
+
+                width: 100%;
+
+                justify-content: space-between;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                border-radius:
+                    var(--radius-large)
+                    var(--radius-large)
+                    0
+                    0;
+            }
+
+            .hero-content {
+                padding: 42px 32px;
+
+                border-left: 2px solid var(--text);
+                border-top: 0;
+
+                border-radius:
+                    0
+                    0
+                    var(--radius-large)
+                    var(--radius-large);
+            }
+
+            .category-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .category-items {
+                grid-template-columns: 1fr;
+            }
+
+            .popular-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .help-section {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .footer-right {
+                align-items: flex-start;
+
+                text-align: left;
+            }
+
+        }
+
+
+        /* =========================================
+           PHONE
+        ========================================== */
+
+        @media (max-width: 560px) {
+
+            .main-nav {
+                display: grid;
+
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 8px 20px;
+            }
+
+            .category-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .button {
+                width: 100%;
+            }
+
+            .section-heading-row {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="site-header">
+
+        <a
+            href="#home"
+            class="logo"
+            aria-label="CHAT home"
+        >
+            CHAT
+        </a>
+
+
+        <nav
+            class="main-nav"
+            aria-label="Main navigation"
+        >
+
+            <a href="#menu">
+                Menu
+            </a>
+
+
+            <a
+                href="https://form.jotform.com/chatteam/chat-order-form"
+                target="_blank"
+                rel="noopener"
+            >
+                Order
+            </a>
+
+
+            <a href="#info">
+                Info
+            </a>
+
+
+            <a href="#help">
+                Help
+            </a>
+
+        </nav>
+
+
+        <a
+            class="nav-order-button"
+            href="https://form.jotform.com/chatteam/chat-order-form"
+            target="_blank"
+            rel="noopener"
+        >
+            Order Now
+        </a>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="hero-image">
+
+                <div class="image-placeholder">
+                    Add your CHAT coffee shop photo here
+                </div>
+
             </div>
 
-            <img
-                src="miroo-logo.png"
-                alt="MIROO, Leila's design logo"
-                class="creator-logo"
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    COFFEE • HOT CHOCOLATE • APPLE CIDER • TEA
+                </p>
+
+
+                <h1>
+                    CHAT
+                </h1>
+
+
+                <h2>
+                    Your student-run coffee shop at RMDS.
+                </h2>
+
+
+                <p class="hero-description">
+                    Simple, fun, and easy for everyone.
+                    Browse the menu, find what you want,
+                    and order with ease.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#menu"
+                        class="button button-yellow"
+                    >
+                        View Menu
+                    </a>
+
+
+                    <a
+                        href="https://form.jotform.com/chatteam/chat-order-form"
+                        class="button button-dark"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             MENU
+        ========================================== -->
+
+        <section
+            class="menu-section"
+            id="menu"
+        >
+
+            <div class="section-heading">
+
+                <p class="section-number">
+                    01
+                </p>
+
+
+                <h2>
+                    What would you like?
+                </h2>
+
+
+                <p>
+                    Choose a category to explore the menu.
+                </p>
+
+            </div>
+
+
+            <div
+                class="category-buttons"
+                role="tablist"
+                aria-label="CHAT menu categories"
             >
+
+                <button
+                    type="button"
+                    class="category-button breakfast active"
+                    data-category="breakfast"
+                    aria-selected="true"
+                >
+                    Breakfast
+                </button>
+
+
+                <button
+                    type="button"
+                    class="category-button coffee"
+                    data-category="coffee"
+                    aria-selected="false"
+                >
+                    Coffee
+                </button>
+
+
+                <button
+                    type="button"
+                    class="category-button tea"
+                    data-category="tea"
+                    aria-selected="false"
+                >
+                    Tea & More
+                </button>
+
+
+                <button
+                    type="button"
+                    class="category-button fruit"
+                    data-category="fruit"
+                    aria-selected="false"
+                >
+                    Fruit & Light
+                </button>
+
+            </div>
+
+
+            <div
+                class="category-display"
+                aria-live="polite"
+            >
+
+                <div class="category-title-row">
+
+                    <h3 id="categoryTitle">
+                        Breakfast
+                    </h3>
+
+
+                    <p>
+                        Browse the category below.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="category-items"
+                    id="categoryItems"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             POPULAR
+        ========================================== -->
+
+        <section class="popular-section">
+
+            <div class="section-heading-row">
+
+                <div>
+
+                    <p class="section-number">
+                        02
+                    </p>
+
+
+                    <h2>
+                        Popular at CHAT
+                    </h2>
+
+                </div>
+
+
+                <a
+                    href="https://form.jotform.com/chatteam/chat-order-form"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Order from full menu →
+                </a>
+
+            </div>
+
+
+            <div class="popular-grid">
+
+
+                <article class="poster-card poster-yellow">
+
+                    <span class="poster-label">
+                        CUSTOMER FAVORITE
+                    </span>
+
+
+                    <div class="poster-image">
+                        Drink photo
+                    </div>
+
+
+                    <h3>
+                        Iced Coffee
+                    </h3>
+
+
+                    <p>
+                        Cool, smooth, and refreshing.
+                    </p>
+
+
+                    <div class="poster-bottom">
+
+                        <strong>
+                            Add price
+                        </strong>
+
+
+                        <a
+                            href="https://form.jotform.com/chatteam/chat-order-form"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="poster-card poster-orange">
+
+                    <span class="poster-label">
+                        COZY PICK
+                    </span>
+
+
+                    <div class="poster-image">
+                        Drink photo
+                    </div>
+
+
+                    <h3>
+                        Hot Chocolate
+                    </h3>
+
+
+                    <p>
+                        Warm, sweet, and cozy.
+                    </p>
+
+
+                    <div class="poster-bottom">
+
+                        <strong>
+                            Add price
+                        </strong>
+
+
+                        <a
+                            href="https://form.jotform.com/chatteam/chat-order-form"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="poster-card poster-green">
+
+                    <span class="poster-label">
+                        REFRESHING
+                    </span>
+
+
+                    <div class="poster-image">
+                        Drink photo
+                    </div>
+
+
+                    <h3>
+                        Tea
+                    </h3>
+
+
+                    <p>
+                        A simple and refreshing favorite.
+                    </p>
+
+
+                    <div class="poster-bottom">
+
+                        <strong>
+                            Add price
+                        </strong>
+
+
+                        <a
+                            href="https://form.jotform.com/chatteam/chat-order-form"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             SPECIAL + HOURS
+        ========================================== -->
+
+        <section
+            class="info-grid"
+            id="info"
+        >
+
+
+            <article class="special-card">
+
+                <p class="section-number">
+                    03
+                </p>
+
+
+                <p class="special-label">
+                    TODAY'S SPECIAL
+                </p>
+
+
+                <h2>
+                    Something good is waiting.
+                </h2>
+
+
+                <div class="special-image">
+                    Add today's special photo
+                </div>
+
+
+                <p class="special-description">
+                    Check out today's featured item from CHAT.
+                </p>
+
+
+                <a
+                    class="button button-dark"
+                    href="https://form.jotform.com/chatteam/chat-order-form"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Order Today's Special
+                </a>
+
+            </article>
+
+
+
+            <article class="hours-card">
+
+                <p class="section-number">
+                    04
+                </p>
+
+
+                <h2>
+                    CHAT Hours
+                </h2>
+
+
+                <div class="open-day">
+
+                    <span class="day-label">
+                        Wednesday
+                    </span>
+
+
+                    <strong class="hours-time">
+                        9:00 AM – 10:10 AM
+                    </strong>
+
+                </div>
+
+
+                <p class="hours-note">
+                    CHAT is open on Wednesdays during school.
+                </p>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =========================================
+             HELP
+        ========================================== -->
+
+        <section
+            class="help-section"
+            id="help"
+        >
+
+            <div class="help-copy">
+
+                <p class="section-number">
+                    05
+                </p>
+
+
+                <h2>
+                    Need help?
+                </h2>
+
+
+                <p>
+                    Ordering should feel clear and easy.
+                    Type your question below or show it
+                    to a CHAT staff member.
+                </p>
+
+            </div>
+
+
+            <form
+                class="help-form"
+                id="helpForm"
+            >
+
+                <label for="helpMessage">
+                    What do you need help with?
+                </label>
+
+
+                <textarea
+                    id="helpMessage"
+                    rows="5"
+                    placeholder="Type your question here..."
+                ></textarea>
+
+
+                <button type="submit">
+                    Done
+                </button>
+
+
+                <p
+                    class="help-message"
+                    id="helpConfirmation"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <div class="footer-main">
+
+            <h2>
+                CHAT
+            </h2>
+
+
+            <p>
+                Student-run coffee shop at RMDS.
+            </p>
+
+
+            <p class="rmds-credit">
+                Part of Rocky Mountain Deaf School
+            </p>
 
         </div>
 
-    </div>
 
-</footer>
+        <div class="footer-right">
+
+            <p>
+                Made for our school community.
+            </p>
+
+
+            <div class="creator-credit">
+
+                <div class="creator-text">
+
+                    <span>
+                        Designed &amp; developed by
+                    </span>
+
+                    <strong>
+                        Leila
+                    </strong>
+
+                </div>
+
+
+                <img
+                    src="miroo-logo.png"
+                    alt="MIROO logo"
+                    class="creator-logo"
+                >
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+        const menuData = {
+
+            breakfast: {
+
+                title: "Breakfast",
+
+                items: [
+                    {
+                        name: "Breakfast Item",
+                        price: "Add price"
+                    },
+
+                    {
+                        name: "Breakfast Item",
+                        price: "Add price"
+                    },
+
+                    {
+                        name: "Breakfast Item",
+                        price: "Add price"
+                    }
+                ]
+            },
+
+
+            coffee: {
+
+                title: "Coffee",
+
+                items: [
+                    {
+                        name: "Iced Coffee",
+                        price: "Add price"
+                    },
+
+                    {
+                        name: "Latte",
+                        price: "Add price"
+                    },
+
+                    {
+                        name: "Coffee Special",
+                        price: "Add price"
+                    }
+                ]
+            },
+
+
+            tea: {
+
+                title: "Tea & More",
+
+                items: [
+                    {
+                        name: "Hot Chocolate",
+                        price: "Add price"
+                    },
+
+                    {
+                        name: "Tea",
+                        price: "Add price"
+                    },
+
+                    {
+                        name: "Apple Cider",
+                        price: "Add price"
+                    }
+                ]
+            },
+
+
+            fruit: {
+
+                title: "Fruit & Light",
+
+                items: [
+                    {
+                        name: "Fruit Item",
+                        price: "Add price"
+                    },
+
+                    {
+                        name: "Light Snack",
+                        price: "Add price"
+                    },
+
+                    {
+                        name: "Fresh Favorite",
+                        price: "Add price"
+                    }
+                ]
+            }
+
+        };
+
+
+
+        const categoryButtons =
+            document.querySelectorAll(".category-button");
+
+
+        const categoryTitle =
+            document.getElementById("categoryTitle");
+
+
+        const categoryItems =
+            document.getElementById("categoryItems");
+
+
+
+        function showCategory(categoryName) {
+
+            const data =
+                menuData[categoryName];
+
+
+            categoryTitle.textContent =
+                data.title;
+
+
+            categoryItems.innerHTML = "";
+
+
+            data.items.forEach(item => {
+
+                const card =
+                    document.createElement("article");
+
+
+                card.className =
+                    "mini-item";
+
+
+                card.innerHTML = `
+
+                    <div class="mini-image">
+                        Item photo
+                    </div>
+
+                    <h4>
+                        ${item.name}
+                    </h4>
+
+                    <p>
+                        ${item.price}
+                    </p>
+
+                `;
+
+
+                categoryItems.appendChild(card);
+
+            });
+
+        }
+
+
+
+        categoryButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                categoryButtons.forEach(otherButton => {
+
+                    otherButton.classList.remove("active");
+
+
+                    otherButton.setAttribute(
+                        "aria-selected",
+                        "false"
+                    );
+
+                });
+
+
+                button.classList.add("active");
+
+
+                button.setAttribute(
+                    "aria-selected",
+                    "true"
+                );
+
+
+                showCategory(
+                    button.dataset.category
+                );
+
+            });
+
+        });
+
+
+
+        showCategory("breakfast");
+
+
+
+        const helpForm =
+            document.getElementById("helpForm");
+
+
+        const helpMessage =
+            document.getElementById("helpMessage");
+
+
+        const helpConfirmation =
+            document.getElementById("helpConfirmation");
+
+
+
+        helpForm.addEventListener("submit", event => {
+
+            event.preventDefault();
+
+
+            const message =
+                helpMessage.value.trim();
+
+
+            if (message === "") {
+
+                helpConfirmation.textContent =
+                    "Type your question first.";
+
+
+                helpMessage.focus();
+
+
+                return;
+            }
+
+
+            helpConfirmation.textContent =
+                "Your question is ready. Show it to a CHAT staff member.";
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
