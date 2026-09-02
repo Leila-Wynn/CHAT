@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CHAT Coffee Shop</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="site-header">
+
+        <a href="#home" class="logo" aria-label="CHAT home">
+            CHAT
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="#menu">Menu</a>
+
+            <a
+                href="https://form.jotform.com/chatteam/chat-order-form"
+                target="_blank"
+                rel="noopener"
+            >
+                Order
+            </a>
+
+            <a href="#info">Info</a>
+
+            <a href="#help">Help</a>
+        </nav>
+
+        <a
+            class="nav-order-button"
+            href="https://form.jotform.com/chatteam/chat-order-form"
+            target="_blank"
+            rel="noopener"
+        >
+            Order Now
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+        <section class="hero" id="home">
+
+            <div class="hero-image">
+                <!-- Replace this with a real CHAT photo later -->
+                <div class="image-placeholder">
+                    CHAT photo
+                </div>
+            </div>
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    COFFEE • HOT CHOCOLATE • APPLE CIDER • TEA
+                </p>
+
+                <h1>CHAT</h1>
+
+                <h2>
+                    Your student-run coffee shop at RMDS.
+                </h2>
+
+                <p class="hero-description">
+                    Simple, fun, and easy for everyone.
+                    Find what you want and order with ease.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#menu"
+                        class="button button-yellow"
+                    >
+                        View Menu
+                    </a>
+
+                    <a
+                        href="https://form.jotform.com/chatteam/chat-order-form"
+                        class="button button-dark"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CATEGORY SECTION
+        ========================== -->
+        <section class="menu-section" id="menu">
+
+            <div class="section-heading">
+                <p class="section-number">01</p>
+
+                <div>
+                    <h2>What would you like?</h2>
+
+                    <p>
+                        Choose a category to explore the menu.
+                    </p>
+                </div>
+            </div>
+
+
+            <div
+                class="category-buttons"
+                role="tablist"
+                aria-label="Menu categories"
+            >
+
+                <button
+                    class="category-button breakfast active"
+                    data-category="breakfast"
+                    role="tab"
+                    aria-selected="true"
+                >
+                    Breakfast
+                </button>
+
+                <button
+                    class="category-button coffee"
+                    data-category="coffee"
+                    role="tab"
+                    aria-selected="false"
+                >
+                    Coffee
+                </button>
+
+                <button
+                    class="category-button tea"
+                    data-category="tea"
+                    role="tab"
+                    aria-selected="false"
+                >
+                    Tea & More
+                </button>
+
+                <button
+                    class="category-button fruit"
+                    data-category="fruit"
+                    role="tab"
+                    aria-selected="false"
+                >
+                    Fruit & Light
+                </button>
+
+            </div>
+
+
+            <!-- Changes when category button is clicked -->
+            <div
+                class="category-display"
+                id="categoryDisplay"
+                aria-live="polite"
+            >
+
+                <div class="category-title-row">
+                    <h3 id="categoryTitle">Breakfast</h3>
+
+                    <a
+                        href="https://form.jotform.com/chatteam/chat-order-form"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        View full order form →
+                    </a>
+                </div>
+
+                <div class="category-items" id="categoryItems">
+
+                    <article class="mini-item">
+                        <div class="mini-image"></div>
+                        <h4>Breakfast Item</h4>
+                        <p>$0.00</p>
+                    </article>
+
+                    <article class="mini-item">
+                        <div class="mini-image"></div>
+                        <h4>Breakfast Item</h4>
+                        <p>$0.00</p>
+                    </article>
+
+                    <article class="mini-item">
+                        <div class="mini-image"></div>
+                        <h4>Breakfast Item</h4>
+                        <p>$0.00</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             POPULAR AT CHAT
+        ========================== -->
+        <section class="popular-section">
+
+            <div class="section-heading-row">
+
+                <div>
+                    <p class="section-number">02</p>
+                    <h2>Popular at CHAT</h2>
+                </div>
+
+                <a
+                    href="https://form.jotform.com/chatteam/chat-order-form"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    View All →
+                </a>
+
+            </div>
+
+
+            <div class="popular-grid">
+
+                <article class="poster-card poster-yellow">
+
+                    <span class="poster-label">
+                        CUSTOMER FAVORITE
+                    </span>
+
+                    <div class="poster-image">
+                        Drink photo
+                    </div>
+
+                    <h3>Iced Latte</h3>
+
+                    <p>
+                        Smooth, cold, and refreshing.
+                    </p>
+
+                    <div class="poster-bottom">
+                        <strong>$0.00</strong>
+
+                        <a
+                            href="https://form.jotform.com/chatteam/chat-order-form"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order →
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <article class="poster-card poster-orange">
+
+                    <span class="poster-label">
+                        CHAT PICK
+                    </span>
+
+                    <div class="poster-image">
+                        Drink photo
+                    </div>
+
+                    <h3>Hot Chocolate</h3>
+
+                    <p>
+                        Warm, sweet, and cozy.
+                    </p>
+
+                    <div class="poster-bottom">
+                        <strong>$0.00</strong>
+
+                        <a
+                            href="https://form.jotform.com/chatteam/chat-order-form"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order →
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <article class="poster-card poster-green">
+
+                    <span class="poster-label">
+                        REFRESHING
+                    </span>
+
+                    <div class="poster-image">
+                        Drink photo
+                    </div>
+
+                    <h3>Tea</h3>
+
+                    <p>
+                        A simple refreshing favorite.
+                    </p>
+
+                    <div class="poster-bottom">
+                        <strong>$0.00</strong>
+
+                        <a
+                            href="https://form.jotform.com/chatteam/chat-order-form"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order →
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SPECIAL + HOURS
+        ========================== -->
+        <section class="info-grid" id="info">
+
+            <article class="special-card">
+
+                <p class="section-number">03</p>
+
+                <p class="special-label">
+                    TODAY'S SPECIAL
+                </p>
+
+                <h2>Something good is waiting.</h2>
+
+                <div class="special-image">
+                    Special item photo
+                </div>
+
+                <a
+                    class="button button-dark"
+                    href="https://form.jotform.com/chatteam/chat-order-form"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Order Today's Special
+                </a>
+
+            </article>
+
+
+            <article class="hours-card">
+
+                <p class="section-number">04</p>
+
+                <h2>CHAT Hours</h2>
+
+                <div class="hours-list">
+
+                    <div>
+                        <span>Monday</span>
+                        <strong>Add time</strong>
+                    </div>
+
+                    <div>
+                        <span>Tuesday</span>
+                        <strong>Add time</strong>
+                    </div>
+
+                    <div>
+                        <span>Wednesday</span>
+                        <strong>Add time</strong>
+                    </div>
+
+                    <div>
+                        <span>Thursday</span>
+                        <strong>Add time</strong>
+                    </div>
+
+                    <div>
+                        <span>Friday</span>
+                        <strong>Add time</strong>
+                    </div>
+
+                </div>
+
+                <p class="hours-note">
+                    Pickup and delivery information can go here.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             HELP
+        ========================== -->
+        <section class="help-section" id="help">
+
+            <div>
+                <p class="section-number">05</p>
+
+                <h2>Need help?</h2>
+
+                <p>
+                    Ordering should feel clear and easy.
+                    Ask a CHAT staff member if you need help.
+                </p>
+            </div>
+
+            <a
+                href="#info"
+                class="button button-yellow"
+            >
+                Get Help
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+        <div>
+            <h2>CHAT</h2>
+
+            <p>
+                Student-run coffee shop at RMDS.
+            </p>
+        </div>
+
+        <div class="footer-right">
+            <p>
+                Made for our school community.
+            </p>
+
+            <p class="rmds-credit">
+                Part of Rocky Mountain Deaf School
+            </p>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
