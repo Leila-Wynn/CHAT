@@ -12,7 +12,6 @@
 
     <title>CHAT Coffee Shop</title>
 
-    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
@@ -26,15 +25,9 @@
         rel="stylesheet"
     >
 
-
     <style>
 
-        /* =========================================
-           COLORS
-        ========================================= */
-
         :root {
-
             --yellow: #FEC92A;
             --cream: #F3E7CA;
             --orange: #F96115;
@@ -45,16 +38,9 @@
             --white: #FFFDF7;
             --text: #241F1B;
             --muted: #655D55;
-            --line: #D8CDBB;
 
             --max-width: 1200px;
-
         }
-
-
-        /* =========================================
-           RESET
-        ========================================= */
 
         * {
             box-sizing: border-box;
@@ -65,17 +51,14 @@
         }
 
         body {
-
             margin: 0;
 
             background: var(--cream);
-
             color: var(--text);
 
             font-family: "Lexend Deca", Arial, sans-serif;
 
             line-height: 1.5;
-
         }
 
         img {
@@ -95,19 +78,14 @@
         a:focus-visible,
         button:focus-visible,
         textarea:focus-visible {
-
             outline: 4px solid var(--red);
             outline-offset: 4px;
-
         }
 
 
-        /* =========================================
-           HEADER
-        ========================================= */
+        /* HEADER */
 
         .site-header {
-
             min-height: 88px;
 
             display: flex;
@@ -125,11 +103,9 @@
             top: 0;
 
             z-index: 100;
-
         }
 
         .logo {
-
             margin-right: auto;
 
             font-family: "Nunito", Arial, sans-serif;
@@ -140,38 +116,30 @@
             color: var(--red);
 
             text-decoration: none;
-
         }
 
         .main-nav {
-
             display: flex;
             align-items: center;
 
             gap: 28px;
-
         }
 
         .main-nav a {
-
             padding: 10px 4px;
 
             font-weight: 500;
 
             text-decoration: none;
-
         }
 
         .main-nav a:hover {
-
             text-decoration: underline;
             text-decoration-thickness: 2px;
             text-underline-offset: 6px;
-
         }
 
         .order-pill {
-
             min-height: 48px;
 
             display: inline-flex;
@@ -190,28 +158,12 @@
             font-weight: 600;
 
             text-decoration: none;
-
-            transition:
-                transform 0.15s ease,
-                box-shadow 0.15s ease;
-
-        }
-
-        .order-pill:hover {
-
-            transform: translate(-2px, -2px);
-
-            box-shadow: 6px 6px 0 var(--text);
-
         }
 
 
-        /* =========================================
-           BUTTONS
-        ========================================= */
+        /* BUTTONS */
 
         .button {
-
             min-height: 52px;
 
             display: inline-flex;
@@ -228,24 +180,10 @@
             font-weight: 600;
 
             text-decoration: none;
-
-            transition:
-                transform 0.15s ease,
-                box-shadow 0.15s ease;
-
-        }
-
-        .button:hover {
-
-            transform: translate(-2px, -2px);
-
-            box-shadow: 6px 6px 0 var(--text);
-
         }
 
         .button-yellow {
             background: var(--yellow);
-            color: var(--text);
         }
 
         .button-dark {
@@ -254,12 +192,9 @@
         }
 
 
-        /* =========================================
-           HERO
-        ========================================= */
+        /* HERO */
 
         .hero {
-
             width: min(var(--max-width), calc(100% - 60px));
 
             margin: 65px auto 100px;
@@ -268,11 +203,9 @@
             grid-template-columns: 1fr 1fr;
 
             min-height: 520px;
-
         }
 
         .hero-image {
-
             min-height: 520px;
 
             padding: 28px;
@@ -285,29 +218,23 @@
             border: 2px solid var(--text);
 
             border-radius: 34px 0 0 34px;
-
-            overflow: hidden;
-
         }
 
         .hero-image img {
-
             width: 100%;
             height: 100%;
 
             min-height: 460px;
 
-            object-fit: cover;
-
-            border: 2px solid var(--text);
-            border-radius: 22px;
+            object-fit: contain;
 
             background: white;
 
+            border: 2px solid var(--text);
+            border-radius: 22px;
         }
 
         .hero-content {
-
             padding: 60px;
 
             display: flex;
@@ -321,87 +248,65 @@
             border-bottom: 2px solid var(--text);
 
             border-radius: 0 34px 34px 0;
-
         }
 
         .eyebrow {
-
             margin: 0 0 12px;
 
             font-size: 0.75rem;
-
             font-weight: 600;
 
             letter-spacing: 0.07em;
-
         }
 
         .hero h1 {
-
             margin: 0;
 
             font-family: "Nunito", Arial, sans-serif;
 
             font-size: clamp(4rem, 7vw, 6rem);
 
-            font-weight: 700;
-
             line-height: 0.95;
 
             color: var(--red);
-
         }
 
         .hero h2 {
-
             margin: 24px 0 10px;
 
             font-family: "Nunito", Arial, sans-serif;
 
             font-size: 1.7rem;
 
-            font-weight: 600;
-
             line-height: 1.2;
-
         }
 
         .hero-description {
-
             max-width: 470px;
 
             margin: 0 0 28px;
-
         }
 
         .hero-buttons {
-
             display: flex;
-
             flex-wrap: wrap;
 
             gap: 16px;
-
         }
 
 
-        /* =========================================
-           SHARED SECTIONS
-        ========================================= */
+        /* GENERAL */
 
         .menu-section,
         .popular-section,
         .info-grid,
         .help-section {
-
             width: min(var(--max-width), calc(100% - 60px));
 
             margin: 100px auto;
-
         }
 
         .section-number {
-
             display: inline-block;
 
             margin: 0 0 10px;
@@ -411,19 +316,14 @@
             background: var(--white);
 
             border: 2px solid var(--text);
-
             border-radius: 999px;
 
             font-size: 0.78rem;
-
             font-weight: 600;
-
         }
 
         .section-heading {
-
             margin-bottom: 32px;
-
         }
 
         .section-heading h2,
@@ -431,32 +331,19 @@
         .special-card h2,
         .hours-card h2,
         .help-copy h2 {
-
             margin: 0;
 
             font-family: "Nunito", Arial, sans-serif;
 
             font-size: clamp(2.2rem, 4vw, 3.3rem);
 
-            font-weight: 600;
-
             line-height: 1.08;
-
-        }
-
-        .section-heading p {
-
-            margin: 8px 0 0;
-
         }
 
 
-        /* =========================================
-           CATEGORY BUTTONS
-        ========================================= */
+        /* MENU BUTTONS */
 
         .category-buttons {
-
             display: grid;
 
             grid-template-columns: repeat(4, 1fr);
@@ -464,17 +351,14 @@
             gap: 16px;
 
             margin-bottom: 26px;
-
         }
 
         .category-button {
-
             min-height: 82px;
 
             padding: 14px;
 
             border: 2px solid var(--text);
-
             border-radius: 22px;
 
             box-shadow: 4px 4px 0 var(--text);
@@ -482,29 +366,15 @@
             font-family: "Nunito", Arial, sans-serif;
 
             font-size: 1.15rem;
-
             font-weight: 600;
 
             cursor: pointer;
-
-            color: var(--text);
-
-            transition:
-                transform 0.15s ease,
-                box-shadow 0.15s ease;
-
-        }
-
-        .category-button:hover {
-            transform: translateY(-3px);
         }
 
         .category-button.active {
-
             transform: translateY(-3px);
 
             box-shadow: 7px 7px 0 var(--text);
-
         }
 
         .breakfast {
@@ -516,11 +386,8 @@
         }
 
         .tea {
-
             background: var(--green);
-
             color: white;
-
         }
 
         .fruit {
@@ -528,179 +395,127 @@
         }
 
 
-        /* =========================================
-           CATEGORY DISPLAY
-        ========================================= */
+        /* MENU DISPLAY */
 
         .category-display {
-
             padding: 34px;
 
             background: var(--white);
 
             border: 2px solid var(--text);
-
             border-radius: 34px;
-
         }
 
         .category-title-row {
-
             margin-bottom: 25px;
-
         }
 
         .category-title-row h3 {
-
             margin: 0;
 
             font-family: "Nunito", Arial, sans-serif;
 
             font-size: 1.9rem;
-
-            font-weight: 600;
-
         }
 
         .category-title-row p {
-
             margin: 5px 0 0;
 
             color: var(--muted);
-
         }
 
         .category-items {
-
             display: grid;
 
             grid-template-columns: repeat(3, 1fr);
 
             gap: 22px;
-
         }
 
         .mini-item {
-
             overflow: hidden;
 
             background: var(--cream);
 
             border: 2px solid var(--text);
-
             border-radius: 22px;
-
         }
 
         .mini-image-wrap {
-
             height: 220px;
 
             padding: 12px;
 
-            background: var(--white);
+            background: white;
 
             border-bottom: 2px solid var(--text);
-
         }
 
         .mini-image-wrap img {
-
             width: 100%;
-
             height: 100%;
 
             object-fit: contain;
-
-            border-radius: 12px;
-
         }
 
         .mini-copy {
-
             padding: 18px;
-
         }
 
         .mini-copy h4 {
-
             margin: 0;
 
             font-family: "Nunito", Arial, sans-serif;
 
-            font-size: 1.15rem;
-
-            font-weight: 600;
-
+            font-size: 1.18rem;
         }
 
         .mini-copy p {
-
             margin: 6px 0 0;
 
             color: var(--muted);
 
             font-size: 0.9rem;
-
         }
 
         .mini-price {
-
             display: block;
 
             margin-top: 12px;
 
             font-size: 1.08rem;
-
             font-weight: 600;
-
-            color: var(--text);
-
         }
 
 
-        /* =========================================
-           POPULAR
-        ========================================= */
+        /* POPULAR */
 
         .section-heading-row {
-
             display: flex;
 
             align-items: flex-end;
-
             justify-content: space-between;
 
             gap: 20px;
 
             margin-bottom: 30px;
-
-        }
-
-        .section-heading-row a {
-            font-weight: 600;
         }
 
         .popular-grid {
-
             display: grid;
 
             grid-template-columns: repeat(3, 1fr);
 
             gap: 25px;
-
         }
 
         .poster-card {
-
             padding: 23px;
 
             border: 2px solid var(--text);
-
             border-radius: 34px;
 
             box-shadow: 7px 7px 0 var(--text);
-
         }
 
         .poster-yellow {
@@ -712,217 +527,152 @@
         }
 
         .poster-green {
-
             background: var(--green);
-
             color: white;
-
         }
 
         .poster-label {
-
             display: inline-block;
 
             margin-bottom: 16px;
 
             padding: 6px 10px;
 
-            background: var(--white);
-
+            background: white;
             color: var(--text);
 
             border: 2px solid var(--text);
-
             border-radius: 999px;
 
             font-size: 0.7rem;
-
             font-weight: 600;
-
         }
 
         .poster-image {
-
             height: 270px;
 
             margin-bottom: 20px;
 
             padding: 12px;
 
-            background: var(--white);
+            background: white;
 
             border: 2px solid var(--text);
-
             border-radius: 22px;
-
         }
 
         .poster-image img {
-
             width: 100%;
-
             height: 100%;
 
             object-fit: contain;
-
-            border-radius: 12px;
-
         }
 
         .poster-card h3 {
-
             margin: 0;
 
             font-family: "Nunito", Arial, sans-serif;
 
             font-size: 1.8rem;
-
-            font-weight: 600;
-
         }
 
         .poster-card p {
-
             margin: 7px 0 18px;
-
         }
 
         .poster-bottom {
-
             display: flex;
 
             align-items: center;
-
             justify-content: space-between;
 
             gap: 15px;
 
             font-weight: 600;
-
         }
 
         .poster-bottom a {
-
             padding: 8px 13px;
 
-            background: var(--white);
-
+            background: white;
             color: var(--text);
 
             border: 2px solid var(--text);
-
             border-radius: 999px;
 
             text-decoration: none;
-
         }
 
 
-        /* =========================================
-           SPECIAL + HOURS
-        ========================================= */
+        /* INFO */
 
         .info-grid {
-
             display: grid;
 
             grid-template-columns: 1.55fr 1fr;
 
             gap: 24px;
-
         }
 
         .special-card,
         .hours-card {
-
             padding: 38px;
 
             border: 2px solid var(--text);
-
             border-radius: 34px;
-
         }
 
         .special-card {
-
             background: var(--red);
-
             color: white;
-
         }
 
         .special-label {
-
-            margin: 0 0 8px;
-
             font-size: 0.82rem;
-
             font-weight: 600;
 
             letter-spacing: 0.06em;
-
         }
 
         .special-image {
-
             min-height: 280px;
 
             margin: 25px 0;
 
             padding: 14px;
 
-            background: var(--white);
+            background: white;
 
             border: 2px solid var(--text);
-
             border-radius: 22px;
-
         }
 
         .special-image img {
-
             width: 100%;
-
             height: 270px;
 
             object-fit: contain;
-
-            border-radius: 14px;
-
-        }
-
-        .special-description {
-
-            margin-bottom: 22px;
-
         }
 
         .special-price {
-
             display: block;
 
             margin-bottom: 18px;
 
             font-size: 1.2rem;
-
             font-weight: 600;
-
         }
 
         .hours-card {
-
-            background: var(--white);
-
+            background: white;
         }
 
         .open-day {
-
             margin-top: 28px;
 
             padding: 25px;
 
             display: flex;
-
             flex-direction: column;
 
             gap: 8px;
@@ -930,46 +680,33 @@
             background: var(--yellow);
 
             border: 2px solid var(--text);
-
             border-radius: 22px;
 
             box-shadow: 5px 5px 0 var(--text);
-
         }
 
         .day-label {
-
             font-family: "Nunito", Arial, sans-serif;
 
             font-size: 1.65rem;
-
             font-weight: 600;
-
         }
 
         .hours-time {
-
             font-size: 1.15rem;
-
             font-weight: 600;
-
         }
 
         .hours-note {
-
             margin-top: 25px;
 
             color: var(--muted);
-
         }
 
 
-        /* =========================================
-           HELP
-        ========================================= */
+        /* HELP */
 
         .help-section {
-
             display: grid;
 
             grid-template-columns: 0.85fr 1.15fr;
@@ -981,61 +718,41 @@
             background: var(--kiwi);
 
             border: 2px solid var(--text);
-
             border-radius: 34px;
-
-        }
-
-        .help-copy p {
-            max-width: 460px;
         }
 
         .help-form {
-
             padding: 24px;
 
-            background: var(--white);
+            background: white;
 
             border: 2px solid var(--text);
-
             border-radius: 22px;
-
         }
 
         .help-form label {
-
             display: block;
 
             margin-bottom: 10px;
 
             font-weight: 600;
-
         }
 
         .help-form textarea {
-
             width: 100%;
-
             min-height: 130px;
 
             padding: 16px;
 
-            background: white;
-
-            color: var(--text);
-
             border: 2px solid var(--text);
-
             border-radius: 14px;
 
             font-size: 1rem;
 
             resize: vertical;
-
         }
 
         .help-form button {
-
             min-height: 48px;
 
             margin-top: 14px;
@@ -1045,7 +762,6 @@
             background: var(--yellow);
 
             border: 2px solid var(--text);
-
             border-radius: 999px;
 
             box-shadow: 4px 4px 0 var(--text);
@@ -1053,28 +769,12 @@
             font-weight: 600;
 
             cursor: pointer;
-
-        }
-
-        .help-message {
-
-            min-height: 24px;
-
-            margin: 15px 0 0;
-
-            font-size: 0.9rem;
-
-            font-weight: 500;
-
         }
 
 
-        /* =========================================
-           FOOTER
-        ========================================= */
+        /* FOOTER */
 
         footer {
-
             margin-top: 100px;
 
             padding: 60px max(5vw, 30px);
@@ -1082,7 +782,6 @@
             display: flex;
 
             align-items: flex-end;
-
             justify-content: space-between;
 
             gap: 50px;
@@ -1090,19 +789,14 @@
             background: var(--green);
 
             color: white;
-
         }
 
         footer h2 {
-
             margin: 0;
 
             font-family: "Nunito", Arial, sans-serif;
 
             font-size: 3rem;
-
-            font-weight: 700;
-
         }
 
         footer p {
@@ -1110,67 +804,41 @@
         }
 
         .rmds-credit {
-
             opacity: 0.8;
 
             font-size: 0.9rem;
-
         }
 
         .footer-right {
-
             display: flex;
 
             flex-direction: column;
-
             align-items: flex-end;
 
             gap: 16px;
 
             text-align: right;
-
         }
 
         .creator-credit {
-
             display: flex;
-
             align-items: center;
 
             gap: 12px;
 
             padding-top: 14px;
 
-            border-top: 1px solid rgba(255, 255, 255, 0.35);
-
+            border-top: 1px solid rgba(255,255,255,0.35);
         }
 
         .creator-text {
-
             display: flex;
-
             flex-direction: column;
 
             font-size: 0.8rem;
-
-            line-height: 1.25;
-
-        }
-
-        .creator-text span {
-            opacity: 0.75;
-        }
-
-        .creator-text strong {
-
-            font-size: 0.95rem;
-
-            font-weight: 600;
-
         }
 
         .creator-logo {
-
             width: 48px !important;
             height: 48px !important;
 
@@ -1183,17 +851,10 @@
             object-fit: cover;
 
             border-radius: 50%;
-
-            border: 1px solid rgba(255,255,255,0.45);
-
-            flex: 0 0 48px;
-
         }
 
 
-        /* =========================================
-           TABLET
-        ========================================= */
+        /* RESPONSIVE */
 
         @media (max-width: 900px) {
 
@@ -1202,13 +863,11 @@
             }
 
             .main-nav {
-
                 order: 3;
 
                 width: 100%;
 
                 justify-content: space-between;
-
             }
 
             .hero {
@@ -1220,14 +879,10 @@
             }
 
             .hero-content {
-
                 border-left: 2px solid var(--text);
                 border-top: 0;
 
                 border-radius: 0 0 34px 34px;
-
-                padding: 42px 32px;
-
             }
 
             .category-buttons {
@@ -1238,57 +893,37 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .popular-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
+            .popular-grid,
+            .info-grid,
             .help-section {
                 grid-template-columns: 1fr;
             }
 
             footer {
-
                 flex-direction: column;
-
                 align-items: flex-start;
-
             }
 
             .footer-right {
-
                 align-items: flex-start;
 
                 text-align: left;
-
             }
 
         }
 
 
-        /* =========================================
-           PHONE
-        ========================================= */
-
         @media (max-width: 560px) {
 
             .main-nav {
-
                 display: grid;
 
                 grid-template-columns: repeat(2, 1fr);
 
                 gap: 8px 20px;
-
             }
 
-            .category-buttons {
-                grid-template-columns: 1fr;
-            }
-
+            .category-buttons,
             .category-items {
                 grid-template-columns: 1fr;
             }
@@ -1302,15 +937,8 @@
             }
 
             .section-heading-row {
-
                 flex-direction: column;
-
                 align-items: flex-start;
-
-            }
-
-            .help-section {
-                padding: 28px;
             }
 
         }
@@ -1323,437 +951,93 @@
 <body>
 
 
-    <!-- HEADER -->
+<header class="site-header">
 
-    <header class="site-header">
+    <a href="#home" class="logo">
+        CHAT
+    </a>
 
-        <a href="#home" class="logo">
-            CHAT
+    <nav class="main-nav">
+
+        <a href="#menu">
+            Menu
         </a>
 
-
-        <nav
-            class="main-nav"
-            aria-label="Main navigation"
-        >
-
-            <a href="#menu">
-                Menu
-            </a>
-
-            <a
-                href="https://form.jotform.com/chatteam/chat-order-form"
-                target="_blank"
-                rel="noopener"
-            >
-                Order
-            </a>
-
-            <a href="#info">
-                Info
-            </a>
-
-            <a href="#help">
-                Help
-            </a>
-
-        </nav>
-
-
         <a
-            class="order-pill"
             href="https://form.jotform.com/chatteam/chat-order-form"
             target="_blank"
             rel="noopener"
         >
-            Order Now
+            Order
         </a>
 
-    </header>
+        <a href="#info">
+            Info
+        </a>
 
+        <a href="#help">
+            Help
+        </a>
 
+    </nav>
 
-    <main>
+    <a
+        class="order-pill"
+        href="https://form.jotform.com/chatteam/chat-order-form"
+        target="_blank"
+        rel="noopener"
+    >
+        Order Now
+    </a>
 
+</header>
 
-        <!-- HERO -->
 
-        <section class="hero" id="home">
+<main>
 
-            <div class="hero-image">
 
-                <img
-                    src="images/senior-sunrise.png"
-                    alt="Bright orange and red Sonic Sunrise iced drink"
-                >
+    <!-- HERO -->
 
-            </div>
+    <section class="hero" id="home">
 
+        <div class="hero-image">
 
-            <div class="hero-content">
+            <img
+                src="./images/senior-sunrise.png?v=5"
+                alt="Sonic Sunrise drink"
+            >
 
-                <p class="eyebrow">
-                    COFFEE • HOT CHOCOLATE • APPLE CIDER • TEA
-                </p>
+        </div>
 
 
-                <h1>
-                    CHAT
-                </h1>
+        <div class="hero-content">
 
+            <p class="eyebrow">
+                COFFEE • HOT CHOCOLATE • JUICE • MATCHA
+            </p>
 
-                <h2>
-                    Your student-run coffee shop at RMDS.
-                </h2>
+            <h1>
+                CHAT
+            </h1>
 
+            <h2>
+                Your student-run coffee shop at RMDS.
+            </h2>
 
-                <p class="hero-description">
-                    Simple, fun, and easy for everyone.
-                    Browse the menu, find what you want,
-                    and order with ease.
-                </p>
+            <p class="hero-description">
+                Simple, fun, and easy for everyone.
+                Browse the menu, find what you want,
+                and order with ease.
+            </p>
 
-
-                <div class="hero-buttons">
-
-                    <a
-                        class="button button-yellow"
-                        href="#menu"
-                    >
-                        View Menu
-                    </a>
-
-
-                    <a
-                        class="button button-dark"
-                        href="https://form.jotform.com/chatteam/chat-order-form"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        Order Now
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- MENU -->
-
-        <section class="menu-section" id="menu">
-
-            <div class="section-heading">
-
-                <p class="section-number">
-                    01
-                </p>
-
-
-                <h2>
-                    What would you like?
-                </h2>
-
-
-                <p>
-                    Choose a category to explore the menu.
-                </p>
-
-            </div>
-
-
-            <div class="category-buttons">
-
-                <button
-                    type="button"
-                    class="category-button breakfast active"
-                    data-category="breakfast"
-                >
-                    Breakfast
-                </button>
-
-
-                <button
-                    type="button"
-                    class="category-button coffee"
-                    data-category="coffee"
-                >
-                    Coffee
-                </button>
-
-
-                <button
-                    type="button"
-                    class="category-button tea"
-                    data-category="tea"
-                >
-                    Tea & More
-                </button>
-
-
-                <button
-                    type="button"
-                    class="category-button fruit"
-                    data-category="fruit"
-                >
-                    Fruit & Light
-                </button>
-
-            </div>
-
-
-            <div class="category-display">
-
-                <div class="category-title-row">
-
-                    <h3 id="categoryTitle">
-                        Breakfast
-                    </h3>
-
-
-                    <p>
-                        Browse the category below.
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="category-items"
-                    id="categoryItems"
-                >
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- POPULAR -->
-
-        <section class="popular-section">
-
-            <div class="section-heading-row">
-
-                <div>
-
-                    <p class="section-number">
-                        02
-                    </p>
-
-
-                    <h2>
-                        Popular at CHAT
-                    </h2>
-
-                </div>
-
+            <div class="hero-buttons">
 
                 <a
-                    href="https://form.jotform.com/chatteam/chat-order-form"
-                    target="_blank"
-                    rel="noopener"
+                    class="button button-yellow"
+                    href="#menu"
                 >
-                    Order from full menu →
+                    View Menu
                 </a>
-
-            </div>
-
-
-            <div class="popular-grid">
-
-
-                <article class="poster-card poster-yellow">
-
-                    <span class="poster-label">
-                        CUSTOMER FAVORITE
-                    </span>
-
-
-                    <div class="poster-image">
-
-                        <img
-                            src="images/latte.png"
-                            alt="Latte"
-                        >
-
-                    </div>
-
-
-                    <h3>
-                        Latte
-                    </h3>
-
-
-                    <p>
-                        Smooth, creamy, and cozy.
-                    </p>
-
-
-                    <div class="poster-bottom">
-
-                        <span>
-                            $3.00
-                        </span>
-
-
-                        <a
-                            href="https://form.jotform.com/chatteam/chat-order-form"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            Order →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="poster-card poster-orange">
-
-                    <span class="poster-label">
-                        SWEET PICK
-                    </span>
-
-
-                    <div class="poster-image">
-
-                        <img
-                            src="images/muffins.png"
-                            alt="Chocolate chip and blueberry muffins"
-                        >
-
-                    </div>
-
-
-                    <h3>
-                        Muffins
-                    </h3>
-
-
-                    <p>
-                        Chocolate chip or blueberry.
-                    </p>
-
-
-                    <div class="poster-bottom">
-
-                        <span>
-                            $1.00
-                        </span>
-
-
-                        <a
-                            href="https://form.jotform.com/chatteam/chat-order-form"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            Order →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="poster-card poster-green">
-
-                    <span class="poster-label">
-                        REFRESHING
-                    </span>
-
-
-                    <div class="poster-image">
-
-                        <img
-                            src="images/matcha.png"
-                            alt="Hot and iced matcha"
-                        >
-
-                    </div>
-
-
-                    <h3>
-                        Matcha
-                    </h3>
-
-
-                    <p>
-                        Available hot or iced.
-                    </p>
-
-
-                    <div class="poster-bottom">
-
-                        <span>
-                            $3.00
-                        </span>
-
-
-                        <a
-                            href="https://form.jotform.com/chatteam/chat-order-form"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            Order →
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- SPECIAL + HOURS -->
-
-        <section class="info-grid" id="info">
-
-            <article class="special-card">
-
-                <p class="section-number">
-                    03
-                </p>
-
-
-                <p class="special-label">
-                    TODAY'S SPECIAL
-                </p>
-
-
-                <h2>
-                    Sonic Sunrise
-                </h2>
-
-
-                <div class="special-image">
-
-                    <img
-                        src="images/senior-sunrise.png"
-                        alt="Sonic Sunrise iced drink"
-                    >
-
-                </div>
-
-
-                <p class="special-description">
-                    A bright orange and red iced drink.
-                </p>
-
-
-                <span class="special-price">
-                    $3.00
-                </span>
-
 
                 <a
                     class="button button-dark"
@@ -1761,470 +1045,988 @@
                     target="_blank"
                     rel="noopener"
                 >
-                    Order Today's Special
+                    Order Now
                 </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MENU -->
+
+    <section class="menu-section" id="menu">
+
+        <div class="section-heading">
+
+            <p class="section-number">
+                01
+            </p>
+
+            <h2>
+                What would you like?
+            </h2>
+
+            <p>
+                Choose a category to explore the menu.
+            </p>
+
+        </div>
+
+
+        <div class="category-buttons">
+
+            <button
+                class="category-button breakfast active"
+                data-category="breakfast"
+            >
+                Breakfast
+            </button>
+
+            <button
+                class="category-button coffee"
+                data-category="coffee"
+            >
+                Coffee
+            </button>
+
+            <button
+                class="category-button tea"
+                data-category="tea"
+            >
+                Tea & More
+            </button>
+
+            <button
+                class="category-button fruit"
+                data-category="fruit"
+            >
+                Fruit & Light
+            </button>
+
+        </div>
+
+
+        <div class="category-display">
+
+            <div class="category-title-row">
+
+                <h3 id="categoryTitle">
+                    Breakfast
+                </h3>
+
+                <p>
+                    Browse the category below.
+                </p>
+
+            </div>
+
+            <div
+                class="category-items"
+                id="categoryItems"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- POPULAR -->
+
+    <section class="popular-section">
+
+        <div class="section-heading-row">
+
+            <div>
+
+                <p class="section-number">
+                    02
+                </p>
+
+                <h2>
+                    Popular at CHAT
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="popular-grid">
+
+
+            <article class="poster-card poster-yellow">
+
+                <span class="poster-label">
+                    CUSTOMER FAVORITE
+                </span>
+
+                <div class="poster-image">
+
+                    <img
+                        src="./images/latte.png?v=5"
+                        alt="Latte"
+                    >
+
+                </div>
+
+                <h3>
+                    Latte
+                </h3>
+
+                <p>
+                    Smooth, creamy, and cozy.
+                </p>
+
+                <div class="poster-bottom">
+
+                    <span>
+                        $3.00
+                    </span>
+
+                    <a
+                        href="https://form.jotform.com/chatteam/chat-order-form"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Order →
+                    </a>
+
+                </div>
 
             </article>
 
 
-           <article class="hours-card">
 
-    <p class="section-number">
-        04
-    </p>
+            <article class="poster-card poster-orange">
 
-    <h2>
-        CHAT Hours
-    </h2>
+                <span class="poster-label">
+                    SWEET PICK
+                </span>
 
-    <div class="open-day">
+                <div class="poster-image">
 
-        <span class="day-label">
-            Tuesday & Wednesday
-        </span>
-
-        <strong class="hours-time">
-            9:00 AM – 10:10 AM
-        </strong>
-
-    </div>
-
-    <p class="hours-note">
-        CHAT is open to customers on Tuesdays and Wednesdays during school.
-    </p>
-
-</article>
-
-
-        </section>
-
-
-
-        <!-- HELP -->
-
-        <section class="help-section" id="help">
-
-            <div class="help-copy">
-
-                <p class="section-number">
-                    05
-                </p>
-
-
-                <h2>
-                    Need help?
-                </h2>
-
-
-                <p>
-                    Ordering should feel clear and easy.
-                    Type your question below or show it
-                    to a CHAT staff member.
-                </p>
-
-            </div>
-
-
-            <form
-                class="help-form"
-                id="helpForm"
-            >
-
-                <label for="helpMessage">
-                    What do you need help with?
-                </label>
-
-
-                <textarea
-                    id="helpMessage"
-                    rows="5"
-                    placeholder="Type your question here..."
-                ></textarea>
-
-
-                <button type="submit">
-                    Done
-                </button>
-
-
-                <p
-                    class="help-message"
-                    id="helpConfirmation"
-                    aria-live="polite"
-                ></p>
-
-            </form>
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div>
-
-            <h2>
-                CHAT
-            </h2>
-
-
-            <p>
-                Student-run coffee shop at RMDS.
-            </p>
-
-
-            <p class="rmds-credit">
-                Part of Rocky Mountain Deaf School
-            </p>
-
-        </div>
-
-
-        <div class="footer-right">
-
-            <p>
-                Made for our school community.
-            </p>
-
-
-            <div class="creator-credit">
-
-                <div class="creator-text">
-
-                    <span>
-                        Designed &amp; developed by
-                    </span>
-
-
-                    <strong>
-                        Leila
-                    </strong>
+                    <img
+                        src="./images/muffins.png?v=5"
+                        alt="Chocolate chip and blueberry muffins"
+                    >
 
                 </div>
 
+                <h3>
+                    Muffins
+                </h3>
+
+                <p>
+                    Chocolate chip or blueberry.
+                </p>
+
+                <div class="poster-bottom">
+
+                    <span>
+                        $1.00
+                    </span>
+
+                    <a
+                        href="https://form.jotform.com/chatteam/chat-order-form"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Order →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="poster-card poster-green">
+
+                <span class="poster-label">
+                    REFRESHING
+                </span>
+
+                <div class="poster-image">
+
+                    <img
+                        src="./images/matcha.png?v=5"
+                        alt="Hot and iced matcha"
+                    >
+
+                </div>
+
+                <h3>
+                    Matcha
+                </h3>
+
+                <p>
+                    Available hot or iced.
+                </p>
+
+                <div class="poster-bottom">
+
+                    <span>
+                        $3.00
+                    </span>
+
+                    <a
+                        href="https://form.jotform.com/chatteam/chat-order-form"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Order →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- INFO -->
+
+    <section class="info-grid" id="info">
+
+        <article class="special-card">
+
+            <p class="section-number">
+                03
+            </p>
+
+            <p class="special-label">
+                TODAY'S SPECIAL
+            </p>
+
+            <h2>
+                Sonic Sunrise
+            </h2>
+
+            <div class="special-image">
 
                 <img
-                    src="miroo-logo.png"
-                    alt="MIROO logo"
-                    class="creator-logo"
-                    width="48"
-                    height="48"
+                    src="./images/senior-sunrise.png?v=5"
+                    alt="Sonic Sunrise drink"
                 >
 
             </div>
 
+            <p>
+                A bright orange and red iced drink.
+            </p>
+
+            <span class="special-price">
+                $3.00
+            </span>
+
+            <a
+                class="button button-dark"
+                href="https://form.jotform.com/chatteam/chat-order-form"
+                target="_blank"
+                rel="noopener"
+            >
+                Order Today's Special
+            </a>
+
+        </article>
+
+
+
+        <article class="hours-card">
+
+            <p class="section-number">
+                04
+            </p>
+
+            <h2>
+                CHAT Hours
+            </h2>
+
+            <div class="open-day">
+
+                <span class="day-label">
+                    Tuesday & Wednesday
+                </span>
+
+                <strong class="hours-time">
+                    9:00 AM – 10:10 AM
+                </strong>
+
+            </div>
+
+            <p class="hours-note">
+                CHAT is open to customers on Tuesdays and Wednesdays during school.
+            </p>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- HELP -->
+
+    <section class="help-section" id="help">
+
+        <div class="help-copy">
+
+            <p class="section-number">
+                05
+            </p>
+
+            <h2>
+                Need help?
+            </h2>
+
+            <p>
+                Ordering should feel clear and easy.
+                Type your question below or show it to a CHAT staff member.
+            </p>
+
         </div>
 
-    </footer>
+
+        <form
+            class="help-form"
+            id="helpForm"
+        >
+
+            <label for="helpMessage">
+                What do you need help with?
+            </label>
+
+            <textarea
+                id="helpMessage"
+                placeholder="Type your question here..."
+            ></textarea>
+
+            <button type="submit">
+                Done
+            </button>
+
+            <p id="helpConfirmation"></p>
+
+        </form>
+
+    </section>
+
+
+</main>
 
 
 
-    <script>
+<footer>
 
-        /* =========================================
-           REAL CHAT MENU
-        ========================================= */
+    <div>
 
-        const menuData = {
+        <h2>
+            CHAT
+        </h2>
 
+        <p>
+            Student-run coffee shop at RMDS.
+        </p>
 
-            breakfast: {
+        <p class="rmds-credit">
+            Part of Rocky Mountain Deaf School
+        </p>
 
-                title: "Breakfast",
-
-                items: [
-
-                    {
-                        name: "Bagels",
-                        description: "Choose from assorted spreads.",
-                        price: "$2.00",
-                        image: "images/bagels.png",
-                        alt: "Bagels with assorted cream cheese spreads"
-                    },
-
-                    {
-                        name: "Elvis Breakfast",
-                        description: "Peanut butter, banana, honey, and optional cinnamon.",
-                        price: "$2.00",
-                        image: "images/elvis-breakfast.png",
-                        alt: "Toast with peanut butter, banana, honey, and cinnamon"
-                    },
-
-                    {
-                        name: "Muffins",
-                        description: "Chocolate chip or blueberry.",
-                        price: "$1.00",
-                        image: "images/muffins.png",
-                        alt: "Chocolate chip and blueberry muffins"
-                    },
-
-                    {
-                        name: "Chocolate Chip Cookie",
-                        description: "A classic chocolate chip cookie.",
-                        price: "$1.25",
-                        image: "images/cookies.png",
-                        alt: "Chocolate chip cookie"
-                    }
-
-                ]
-
-            },
+    </div>
 
 
-            coffee: {
+    <div class="footer-right">
 
-                title: "Coffee",
+        <p>
+            Made for our school community.
+        </p>
 
-                items: [
+        <div class="creator-credit">
 
-                    {
-                        name: "CCC",
-                        description: "Cinnamon chai coffee.",
-                        price: "$3.00",
-                        image: "images/ccc.png",
-                        alt: "Cinnamon chai coffee"
-                    },
+            <div class="creator-text">
 
-                    {
-                        name: "Latte",
-                        description: "Smooth espresso and milk.",
-                        price: "$3.00",
-                        image: "images/latte.png",
-                        alt: "Latte"
-                    },
+                <span>
+                    Designed & developed by
+                </span>
 
-                    {
-                        name: "LCC",
-                        description: "Latte with chai tea, chocolate, and espresso.",
-                        price: "$3.00",
-                        image: "images/lcc.png",
-                        alt: "Latte with chai tea, chocolate, and espresso"
-                    }
+                <strong>
+                    Leila
+                </strong>
 
-                ]
+            </div>
 
-            },
+            <img
+                src="./miroo-logo.png?v=5"
+                alt="MIROO logo"
+                class="creator-logo"
+            >
+
+        </div>
+
+    </div>
+
+</footer>
 
 
-            tea: {
 
-                title: "Tea & More",
-
-                items: [
-
-                    {
-                        name: "Hot Chocolate",
-                        description: "Warm and chocolatey.",
-                        price: "$3.00",
-                        image: "images/hot-chocolate.png",
-                        alt: "Hot chocolate"
-                    },
-
-                    {
-                        name: "Mexican Hot Chocolate",
-                        description: "Rich hot chocolate with warm spice.",
-                        price: "$3.00",
-                        image: "images/mexican-hot-chocolate.png",
-                        alt: "Mexican hot chocolate"
-                    },
-
-                    {
-                        name: "Matcha",
-                        description: "Available hot or iced.",
-                        price: "$3.00",
-                        image: "images/matcha.png",
-                        alt: "Hot and iced matcha"
-                    }
-
-                ]
-
-            },
+<script>
 
 
-            fruit: {
+    /* =========================================
+       IMAGE FALLBACK SYSTEM
+       This tries multiple filenames automatically.
+    ========================================= */
 
-                title: "Fruit & Light",
 
-                items: [
+    function loadImageWithFallback(
+        img,
+        paths,
+        index = 0
+    ) {
 
-                    {
-                        name: "Apple Juice",
-                        description: "Cold apple juice.",
-                        price: "$3.00",
-                        image: "images/apple-juice.png",
-                        alt: "Apple juice"
-                    },
+        if (index >= paths.length) {
+            console.error(
+                "Could not load image:",
+                paths
+            );
 
-                    {
-                        name: "Orange Juice",
-                        description: "Cold orange juice.",
-                        price: "$3.00",
-                        image: "images/orange-juice.png",
-                        alt: "Orange juice"
-                    },
+            return;
+        }
 
-                    {
-                        name: "Sonic Sunrise",
-                        description: "A bright orange and red iced drink.",
-                        price: "$3.00",
-                        image: "images/senior-sunrise.png",
-                        alt: "Sonic Sunrise iced drink"
-                    }
 
-                ]
+        img.onerror = function () {
 
-            }
+            loadImageWithFallback(
+                img,
+                paths,
+                index + 1
+            );
 
         };
 
 
-        const categoryButtons =
-            document.querySelectorAll(".category-button");
+        img.src = paths[index];
 
-
-        const categoryTitle =
-            document.getElementById("categoryTitle");
-
-
-        const categoryItems =
-            document.getElementById("categoryItems");
+    }
 
 
 
-        function showCategory(categoryName) {
+    /* =========================================
+       MENU
+    ========================================= */
 
 
-            const data =
-                menuData[categoryName];
+    const menuData = {
 
 
-            categoryTitle.textContent =
-                data.title;
+        breakfast: {
+
+            title: "Breakfast",
+
+            items: [
+
+                {
+                    name: "Bagels",
+
+                    description:
+                        "Choose from assorted spreads.",
+
+                    price:
+                        "$2.00",
+
+                    images: [
+                        "./images/bagels.png?v=5",
+                        "./images/Bagels.png?v=5"
+                    ],
+
+                    alt:
+                        "Bagels with assorted spreads"
+                },
 
 
-            categoryItems.innerHTML =
-                "";
+                {
+                    name: "Elvis Breakfast",
+
+                    description:
+                        "Peanut butter, banana, honey, and optional cinnamon.",
+
+                    price:
+                        "$2.00",
+
+                    images: [
+                        "./images/elvis-breakfast.png?v=5",
+                        "./images/Elvis Breakfast.png?v=5"
+                    ],
+
+                    alt:
+                        "Elvis Breakfast with peanut butter banana and honey"
+                },
 
 
-            data.items.forEach(item => {
+                {
+                    name: "Muffins",
+
+                    description:
+                        "Chocolate chip or blueberry.",
+
+                    price:
+                        "$1.00",
+
+                    images: [
+                        "./images/muffins.png?v=5"
+                    ],
+
+                    alt:
+                        "Chocolate chip and blueberry muffins"
+                },
+
+
+                {
+                    name: "Chocolate Chip Cookie",
+
+                    description:
+                        "A classic chocolate chip cookie.",
+
+                    price:
+                        "$1.25",
+
+                    images: [
+                        "./images/cookies.png?v=5"
+                    ],
+
+                    alt:
+                        "Chocolate chip cookie"
+                }
+
+            ]
+
+        },
+
+
+
+        coffee: {
+
+            title: "Coffee",
+
+            items: [
+
+                {
+                    name: "CCC",
+
+                    description:
+                        "Cinnamon chai coffee.",
+
+                    price:
+                        "$3.00",
+
+                    images: [
+                        "./images/ccc.png?v=5",
+                        "./images/CCC.png?v=5"
+                    ],
+
+                    alt:
+                        "Cinnamon chai coffee"
+                },
+
+
+                {
+                    name: "Latte",
+
+                    description:
+                        "Smooth espresso and milk.",
+
+                    price:
+                        "$3.00",
+
+                    images: [
+                        "./images/latte.png?v=5"
+                    ],
+
+                    alt:
+                        "Latte"
+                },
+
+
+                {
+                    name: "LCC",
+
+                    description:
+                        "Latte with chai tea, chocolate, and espresso.",
+
+                    price:
+                        "$3.00",
+
+                    images: [
+                        "./images/lcc.png?v=5",
+                        "./images/LCC.png?v=5"
+                    ],
+
+                    alt:
+                        "Latte with chai chocolate and espresso"
+                }
+
+            ]
+
+        },
+
+
+
+        tea: {
+
+            title: "Tea & More",
+
+            items: [
+
+                {
+                    name: "Hot Chocolate",
+
+                    description:
+                        "Warm and chocolatey.",
+
+                    price:
+                        "$3.00",
+
+                    images: [
+                        "./images/hot-chocolate.png?v=5",
+                        "./images/Hot-chocolate.png?v=5",
+                        "./images/Hot chocolate.png?v=5"
+                    ],
+
+                    alt:
+                        "Hot chocolate"
+                },
+
+
+                {
+                    name: "Mexican Hot Chocolate",
+
+                    description:
+                        "Rich hot chocolate with warm spice.",
+
+                    price:
+                        "$3.00",
+
+                    images: [
+                        "./images/mexican-hot-chocolate.png?v=5",
+                        "./images/Mexican-Hot-chocolate.png?v=5",
+                        "./images/Mexican Hot chocolate.png?v=5"
+                    ],
+
+                    alt:
+                        "Mexican hot chocolate"
+                },
+
+
+                {
+                    name: "Matcha",
+
+                    description:
+                        "Available hot or iced.",
+
+                    price:
+                        "$3.00",
+
+                    images: [
+                        "./images/matcha.png?v=5",
+                        "./images/Matcha.png?v=5"
+                    ],
+
+                    alt:
+                        "Hot and iced matcha"
+                }
+
+            ]
+
+        },
+
+
+
+        fruit: {
+
+            title: "Fruit & Light",
+
+            items: [
+
+                {
+                    name: "Apple Juice",
+
+                    description:
+                        "Cold apple juice.",
+
+                    price:
+                        "$3.00",
+
+                    images: [
+                        "./images/apple-juice.png?v=5",
+                        "./images/apple juice.png?v=5"
+                    ],
+
+                    alt:
+                        "Apple juice"
+                },
+
+
+                {
+                    name: "Orange Juice",
+
+                    description:
+                        "Cold orange juice.",
+
+                    price:
+                        "$3.00",
+
+                    images: [
+                        "./images/orange-juice.png?v=5",
+                        "./images/orange juice.png?v=5"
+                    ],
+
+                    alt:
+                        "Orange juice"
+                },
+
+
+                {
+                    name: "Sonic Sunrise",
+
+                    description:
+                        "A bright orange and red iced drink.",
+
+                    price:
+                        "$3.00",
+
+                    images: [
+                        "./images/senior-sunrise.png?v=5",
+                        "./images/seniorsunrise.png?v=5"
+                    ],
+
+                    alt:
+                        "Sonic Sunrise drink"
+                }
+
+            ]
+
+        }
+
+    };
+
+
+
+    const categoryButtons =
+        document.querySelectorAll(
+            ".category-button"
+        );
+
+
+    const categoryTitle =
+        document.getElementById(
+            "categoryTitle"
+        );
+
+
+    const categoryItems =
+        document.getElementById(
+            "categoryItems"
+        );
+
+
+
+    function showCategory(
+        categoryName
+    ) {
+
+        const data =
+            menuData[categoryName];
+
+
+        categoryTitle.textContent =
+            data.title;
+
+
+        categoryItems.innerHTML =
+            "";
+
+
+        data.items.forEach(
+            item => {
 
 
                 const card =
-                    document.createElement("article");
+                    document.createElement(
+                        "article"
+                    );
 
 
                 card.className =
                     "mini-item";
 
 
-                card.innerHTML = `
 
-                    <div class="mini-image-wrap">
-
-                        <img
-                            src="${item.image}"
-                            alt="${item.alt}"
-                        >
-
-                    </div>
+                const imageWrap =
+                    document.createElement(
+                        "div"
+                    );
 
 
-                    <div class="mini-copy">
-
-                        <h4>
-                            ${item.name}
-                        </h4>
+                imageWrap.className =
+                    "mini-image-wrap";
 
 
-                        <p>
-                            ${item.description}
-                        </p>
+
+                const img =
+                    document.createElement(
+                        "img"
+                    );
 
 
-                        <strong class="mini-price">
-                            ${item.price}
-                        </strong>
+                img.alt =
+                    item.alt;
 
-                    </div>
+
+                loadImageWithFallback(
+                    img,
+                    item.images
+                );
+
+
+                imageWrap.appendChild(
+                    img
+                );
+
+
+
+                const copy =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                copy.className =
+                    "mini-copy";
+
+
+                copy.innerHTML = `
+
+                    <h4>
+                        ${item.name}
+                    </h4>
+
+                    <p>
+                        ${item.description}
+                    </p>
+
+                    <strong class="mini-price">
+                        ${item.price}
+                    </strong>
 
                 `;
 
 
-                categoryItems.appendChild(card);
 
-            });
-
-        }
-
-
-
-        categoryButtons.forEach(button => {
-
-
-            button.addEventListener("click", () => {
-
-
-                categoryButtons.forEach(otherButton => {
-
-                    otherButton.classList.remove("active");
-
-                });
-
-
-                button.classList.add("active");
-
-
-                showCategory(
-                    button.dataset.category
+                card.appendChild(
+                    imageWrap
                 );
 
-            });
 
-        });
-
-
-
-        showCategory("breakfast");
+                card.appendChild(
+                    copy
+                );
 
 
+                categoryItems.appendChild(
+                    card
+                );
 
-        /* =========================================
-           HELP BOX
-        ========================================= */
+            }
+        );
 
-        const helpForm =
-            document.getElementById("helpForm");
-
-
-        const helpMessage =
-            document.getElementById("helpMessage");
-
-
-        const helpConfirmation =
-            document.getElementById("helpConfirmation");
+    }
 
 
 
-        helpForm.addEventListener("submit", event => {
+    categoryButtons.forEach(
+        button => {
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+
+                    categoryButtons.forEach(
+                        otherButton => {
+
+                            otherButton.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    button.classList.add(
+                        "active"
+                    );
+
+
+                    showCategory(
+                        button.dataset.category
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    showCategory(
+        "breakfast"
+    );
+
+
+
+    /* HELP BOX */
+
+    const helpForm =
+        document.getElementById(
+            "helpForm"
+        );
+
+
+    const helpMessage =
+        document.getElementById(
+            "helpMessage"
+        );
+
+
+    const helpConfirmation =
+        document.getElementById(
+            "helpConfirmation"
+        );
+
+
+    helpForm.addEventListener(
+        "submit",
+        event => {
 
 
             event.preventDefault();
 
 
-            if (helpMessage.value.trim() === "") {
-
+            if (
+                helpMessage.value.trim()
+                === ""
+            ) {
 
                 helpConfirmation.textContent =
                     "Type your question first.";
-
-
-                helpMessage.focus();
-
 
                 return;
 
@@ -2234,10 +2036,11 @@
             helpConfirmation.textContent =
                 "Your question is ready. Show it to a CHAT staff member.";
 
-        });
+        }
+    );
 
 
-    </script>
+</script>
 
 
 </body>
